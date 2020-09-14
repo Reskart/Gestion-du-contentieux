@@ -5,4 +5,5 @@ public class Test {
 	public int j=0;
 	public int k=0;
 	public int l=0;
+	public int m=0;
 }
