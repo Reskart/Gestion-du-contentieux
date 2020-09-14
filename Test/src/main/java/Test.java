@@ -6,4 +6,5 @@ public class Test {
 	public int k=0;
 	public int l=0;
 	public int m=0;
+	public int n=0;
 }
