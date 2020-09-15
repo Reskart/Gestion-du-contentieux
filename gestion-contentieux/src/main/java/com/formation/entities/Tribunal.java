@@ -2,6 +2,10 @@ package com.formation.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Tribunal implements Serializable{
 
 	/**
@@ -9,12 +13,27 @@ public class Tribunal implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@GeneratedValue
 	private Long idTribunal;
 	private String adresse;
 	private Double fax;
 	private Double tel;
 	private String region;
 	
+	
+	public Tribunal() {
+		super();
+	}
+
+	public Tribunal(Long idTribunal, String adresse, Double fax, Double tel, String region) {
+		super();
+		this.idTribunal = idTribunal;
+		this.adresse = adresse;
+		this.fax = fax;
+		this.tel = tel;
+		this.region = region;
+	}
+
 	public Long getIdTribunal() {
 		return idTribunal;
 	}

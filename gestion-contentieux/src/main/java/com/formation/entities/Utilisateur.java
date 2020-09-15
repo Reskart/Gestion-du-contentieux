@@ -2,6 +2,10 @@ package com.formation.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Utilisateur implements Serializable {
 
 	/**
@@ -9,10 +13,23 @@ public class Utilisateur implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 		
+	@GeneratedValue
 	private Long idUtilisateur;
 	private String email;
 	private String nomUtilisateur;
 	private String prenomUtilisateur;
+	
+	public Utilisateur() {
+		super();
+	}
+
+	public Utilisateur(Long idUtilisateur, String email, String nomUtilisateur, String prenomUtilisateur) {
+		super();
+		this.idUtilisateur = idUtilisateur;
+		this.email = email;
+		this.nomUtilisateur = nomUtilisateur;
+		this.prenomUtilisateur = prenomUtilisateur;
+	}
 	
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
