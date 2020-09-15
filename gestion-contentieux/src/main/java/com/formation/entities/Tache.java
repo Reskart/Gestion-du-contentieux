@@ -24,17 +24,9 @@ public class Tache implements Serializable {
 	private String titre;
 	private String description;
 	private boolean statutAudience;
-	
-	@ManyToOne
-	@JoinColumn(name="idUser")
 	private Utilisateur user;
-	@ManyToOne
-	@JoinColumn(name="idAffaires")
 	private Affaire affaire;
-	@ManyToOne
-	@JoinColumn(name="idTribunal")
 	private Tribunal tribunal;
-	@OneToMany(mappedBy = "Phase")
 	private List<Phase> phases;
 	
 	public Tache() {
@@ -97,6 +89,8 @@ public class Tache implements Serializable {
 		this.statutAudience = statutAudience;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="idUtilisateur")
 	public Utilisateur getUser() {
 		return user;
 	}
@@ -105,6 +99,8 @@ public class Tache implements Serializable {
 		this.user = user;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="idAffaire")
 	public Affaire getAffaire() {
 		return affaire;
 	}
@@ -113,6 +109,8 @@ public class Tache implements Serializable {
 		this.affaire = affaire;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="idTribunal")
 	public Tribunal getTribunal() {
 		return tribunal;
 	}
@@ -121,6 +119,7 @@ public class Tache implements Serializable {
 		this.tribunal = tribunal;
 	}
 
+	@OneToMany(mappedBy = "Phase")
 	public List<Phase> getPhases() {
 		return phases;
 	}
