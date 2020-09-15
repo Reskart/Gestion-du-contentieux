@@ -3,6 +3,9 @@ package com.formation.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Affaire implements Serializable {
@@ -33,6 +36,66 @@ public class Affaire implements Serializable {
 		this.description = description;
 		this.statut = statut;
 	}
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public Long getIdAffaire() {
+		return idAffaire;
+	}
+
+
+	public void setIdAffaire(Long idAffaire) {
+		this.idAffaire = idAffaire;
+	}
+
+
+	public String getReference() {
+		return reference;
+	}
+
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+
+	public String getTitre() {
+		return titre;
+	}
+
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public int getStatut() {
+		return statut;
+	}
+
+
+	public void setStatut(int statut) {
+		this.statut = statut;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Affaire [idAffaire=" + idAffaire + ", reference=" + reference + ", titre=" + titre + ", description="
+				+ description + ", statut=" + statut + "]";
+	}
+	
+	
 	
 	
 }
