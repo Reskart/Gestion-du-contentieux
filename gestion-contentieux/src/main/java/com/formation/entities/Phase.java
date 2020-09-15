@@ -11,6 +11,11 @@ import javax.persistence.Id;
 @Entity
 public class Phase implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private long idPhase;
 	
 	private String nom;
