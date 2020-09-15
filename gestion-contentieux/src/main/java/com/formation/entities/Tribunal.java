@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Tribunal implements Serializable{
@@ -34,6 +35,7 @@ public class Tribunal implements Serializable{
 		this.region = region;
 	}
 
+	@Id
 	public Long getIdTribunal() {
 		return idTribunal;
 	}
