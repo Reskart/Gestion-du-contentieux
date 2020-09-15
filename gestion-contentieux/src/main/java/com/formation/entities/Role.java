@@ -2,11 +2,13 @@ package com.formation.entities;
 
 import java.io.Serializable;
 import java.util.List;
-
+import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -35,7 +37,10 @@ public class Role implements Serializable{
 	}
 
 
-	@OneToMany
+	@ManyToMany
+	@JoinTable( name = "T_Utilisateur_Roles_Associations",
+	joinColumns = @JoinColumn( name = "idRole" ),
+    inverseJoinColumns = @JoinColumn( name = "idUtilisateur" ) )
 	public List<Utilisateur> getUtilisateurs() {
 		return utilisateurs;
 	}
