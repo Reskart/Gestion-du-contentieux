@@ -19,10 +19,8 @@ public class Phase implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private long idPhase;
-	
+	private Long idPhase;
 	private String nom;
-	
 	private Date dateDebut;
 	
 	@ManyToOne

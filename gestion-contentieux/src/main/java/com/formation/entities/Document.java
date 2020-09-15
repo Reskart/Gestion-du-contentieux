@@ -17,12 +17,9 @@ public class Document implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private long idDocument;
-	
+	private Long idDocument;
 	private Date dateCreation;
-	
 	private String nom;
-	
 	private String description;
 
 	public Document() {
