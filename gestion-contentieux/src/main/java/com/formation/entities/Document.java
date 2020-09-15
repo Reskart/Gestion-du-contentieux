@@ -12,6 +12,11 @@ import javax.persistence.Id;
 public class Document implements Serializable{
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private long idDocument;
 	
 	private Date dateCreation;
