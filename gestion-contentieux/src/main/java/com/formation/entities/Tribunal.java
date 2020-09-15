@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,7 +15,7 @@ public class Tribunal implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@GeneratedValue
+
 	private Long idTribunal;
 	private String adresse;
 	private Double fax;
@@ -36,6 +37,7 @@ public class Tribunal implements Serializable{
 	}
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getIdTribunal() {
 		return idTribunal;
 	}

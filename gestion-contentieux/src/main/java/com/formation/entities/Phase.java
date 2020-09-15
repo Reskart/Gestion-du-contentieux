@@ -1,12 +1,15 @@
 package com.formation.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Phase {
+public class Phase implements Serializable{
 	
 	private long idPhase;
 	
@@ -34,6 +37,7 @@ public class Phase {
 	private Date dateFin;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long getIdPhase() {
 		return idPhase;
 	}
