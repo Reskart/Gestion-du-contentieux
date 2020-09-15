@@ -1,5 +1,41 @@
 package com.formation.service.impl;
 
-public class RoleService {
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.formation.entities.Role;
+import com.formation.repositories.IRoleRepository;
+import com.formation.service.IRoleService;
+
+public class RoleService implements IRoleService{
+	
+	@Autowired
+	public IRoleRepository repo;
+
+	@Override
+	public Role saveOrUpdate(Role r) {
+		
+		return repo.save(r);
+	}
+
+	@Override
+	public void delete(Long id) {
+		repo.deleteById(id);
+		
+	}
+
+	@Override
+	public Role getById(Long id) {
+
+		return repo.getOne(id);
+	}
+
+	@Override
+	public List<Role> getAll() {
+		repo.findAll();
+		return null;
+	}
 
 }
