@@ -1,11 +1,14 @@
 package com.formation.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Affaire implements Serializable {
@@ -20,21 +23,24 @@ public class Affaire implements Serializable {
 	private String titre;
 	private String description;
 	private int statut;
-	
+	private List<Tache> taches;
+	private List<Document> documents;
 	
 	public Affaire() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public Affaire(Long idAffaire, String reference, String titre, String description, int statut) {
+	
+	public Affaire(Long idAffaire, String reference, String titre, String description, int statut, List<Tache> taches,
+			List<Document> documents) {
 		super();
 		this.idAffaire = idAffaire;
 		this.reference = reference;
 		this.titre = titre;
 		this.description = description;
 		this.statut = statut;
+		this.taches = taches;
+		this.documents = documents;
 	}
 
 	@Id
@@ -88,12 +94,36 @@ public class Affaire implements Serializable {
 		this.statut = statut;
 	}
 
+	@OneToMany
+	@JoinColumn(name="idTache")
+	public List<Tache> getTaches() {
+		return taches;
+	}
+
+	public void setTaches(List<Tache> taches) {
+		this.taches = taches;
+	}
+
+	@OneToMany
+	@JoinColumn(name="idDocument")
+	public List<Document> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(List<Document> documents) {
+		this.documents = documents;
+	}
 
 	@Override
 	public String toString() {
 		return "Affaire [idAffaire=" + idAffaire + ", reference=" + reference + ", titre=" + titre + ", description="
-				+ description + ", statut=" + statut + "]";
+				+ description + ", statut=" + statut + ", taches=" + taches + ", documents=" + documents + "]";
 	}
+	
+	
+
+
+
 	
 	
 	
