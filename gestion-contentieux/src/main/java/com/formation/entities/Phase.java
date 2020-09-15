@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Phase implements Serializable{
@@ -22,22 +25,42 @@ public class Phase implements Serializable{
 	
 	private Date dateDebut;
 	
+	@ManyToOne
+	@JoinColumn(name="IdTache", nullable = false)
+	private Tache tache;
+	
+	public Tache getTache() {
+		return tache;
+	}
+
+	public void setTache(Tache tache) {
+		this.tache = tache;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Phase [idPhase=" + idPhase + ", nom=" + nom + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + "]";
+		return "Phase [idPhase=" + idPhase + ", nom=" + nom + ", dateDebut=" + dateDebut + ", tache=" + tache
+				+ ", dateFin=" + dateFin + "]";
 	}
 
 	public Phase() {
 		super();
 	}
 
-	public Phase(long idPhase, String nom, Date dateDebut, Date dateFin) {
+
+
+	public Phase(long idPhase, String nom, Date dateDebut, Tache tache, Date dateFin) {
 		super();
 		this.idPhase = idPhase;
 		this.nom = nom;
 		this.dateDebut = dateDebut;
+		this.tache = tache;
 		this.dateFin = dateFin;
 	}
+
+
 
 	private Date dateFin;
 
