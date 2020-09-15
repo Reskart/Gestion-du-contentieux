@@ -9,7 +9,7 @@ import com.formation.entities.Utilisateur;
 import com.formation.repositories.IUtilisateurRepository;
 import com.formation.service.IUtilisateurService;
 
-@Service("utilisateurservice")
+@Service
 public class UtilisateurService implements IUtilisateurService {
 	
 	@Autowired

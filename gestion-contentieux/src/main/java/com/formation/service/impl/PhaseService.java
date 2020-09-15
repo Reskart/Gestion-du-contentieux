@@ -3,11 +3,13 @@ package com.formation.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.formation.entities.Phase;
 import com.formation.repositories.IPhaseRepository;
 import com.formation.service.IPhaseService;
 
+@Service
 public class PhaseService implements IPhaseService{
 	
 	@Autowired

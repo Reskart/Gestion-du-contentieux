@@ -3,11 +3,13 @@ package com.formation.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.formation.entities.Role;
 import com.formation.repositories.IRoleRepository;
 import com.formation.service.IRoleService;
 
+@Service
 public class RoleService implements IRoleService{
 	
 	@Autowired

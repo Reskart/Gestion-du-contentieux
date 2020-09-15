@@ -3,11 +3,13 @@ package com.formation.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.formation.entities.Affaire;
 import com.formation.repositories.IAffaireRepository;
 import com.formation.service.IAffaireService;
 
+@Service
 public class AffaireService implements IAffaireService {
 
 	@Autowired
