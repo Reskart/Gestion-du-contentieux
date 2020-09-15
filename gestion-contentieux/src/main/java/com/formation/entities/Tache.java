@@ -3,7 +3,14 @@ package com.formation.entities;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Tache implements Serializable {
+	
 	private long IdTache;
 	private Date dateCreation;
 	private String titre;
@@ -11,11 +18,24 @@ public class Tache implements Serializable {
 	private boolean statutAudience;
 	
 	
+	public Tache() {
+		super();
+	}
+	public Tache(long idTache, Date dateCreation, String titre, String description, boolean statutAudience) {
+		super();
+		IdTache = idTache;
+		this.dateCreation = dateCreation;
+		this.titre = titre;
+		this.description = description;
+		this.statutAudience = statutAudience;
+	}
 	@Override
 	public String toString() {
 		return "Tache [IdTache=" + IdTache + ", dateCreation=" + dateCreation + ", titre=" + titre + ", description="
 				+ description + ", statutAudience=" + statutAudience + "]";
 	}
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long getIdTache() {
 		return IdTache;
 	}
