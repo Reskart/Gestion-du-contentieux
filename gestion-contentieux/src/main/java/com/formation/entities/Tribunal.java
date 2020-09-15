@@ -1,11 +1,14 @@
 package com.formation.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tribunal implements Serializable{
@@ -21,19 +24,31 @@ public class Tribunal implements Serializable{
 	private Double fax;
 	private Double tel;
 	private String region;
-	
-	
+	private List<Tache> Taches;
+
+
+	@OneToMany(mappedBy="Tache")
+	public List<Tache> getListTache() {
+		return Taches;
+	}
+
+	public void setListTache(List<Tache> listTache) {
+		this.Taches = listTache;
+	}
+
 	public Tribunal() {
 		super();
 	}
 
-	public Tribunal(Long idTribunal, String adresse, Double fax, Double tel, String region) {
+
+	public Tribunal(Long idTribunal, String adresse, Double fax, Double tel, String region, List<Tache> taches) {
 		super();
 		this.idTribunal = idTribunal;
 		this.adresse = adresse;
 		this.fax = fax;
 		this.tel = tel;
 		this.region = region;
+		Taches = taches;
 	}
 
 	@Id
@@ -81,12 +96,15 @@ public class Tribunal implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Tribunal [idTribunal=" + idTribunal + ", adresse=" + adresse + ", fax=" + fax + ", tel=" + tel
-				+ ", region=" + region + "]";
+				+ ", region=" + region + ", Taches=" + Taches + "]";
 	}
+	
+
+	
 	
 	
 
