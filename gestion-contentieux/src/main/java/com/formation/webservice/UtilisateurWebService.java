@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.formation.entities.Phase;
-import com.formation.service.IPhaseService;
+import com.formation.entities.Utilisateur;
+import com.formation.service.IUtilisateurService;
 
 @RestController
-@RequestMapping("/apiPhase")
+@RequestMapping("/apiUtilisateur")
 @CrossOrigin("*")
-public class PhaseWebservice {
-
+public class UtilisateurWebService {
+	
 	@Autowired
-	public IPhaseService service;
+	public IUtilisateurService service;
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public Phase ajout(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Utilisateur ajout(@RequestBody Utilisateur u) {
+		return service.saveOrUpdate(u);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
-	public Phase update(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Utilisateur update(@RequestBody Utilisateur u) {
+		return service.saveOrUpdate(u);
 	}
 	
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
@@ -36,14 +36,14 @@ public class PhaseWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/phase/{id}", method=RequestMethod.GET)
-	public Phase getById(Long id) {
+	@RequestMapping(value="/utilisateur/{id}", method=RequestMethod.GET)
+	public Utilisateur getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/phases", method=RequestMethod.GET)
-	public List<Phase> getAll(){
+	@RequestMapping(value="utilisateurs", method=RequestMethod.GET)
+	public List<Utilisateur> getAll(){
 		return service.getAll();
 	}
-	
+
 }

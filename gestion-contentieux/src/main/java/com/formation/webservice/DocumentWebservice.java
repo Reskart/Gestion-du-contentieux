@@ -38,12 +38,12 @@ public class DocumentWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/role/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/document/{id}", method=RequestMethod.GET)
 	public Document getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/roles", method=RequestMethod.GET)
+	@RequestMapping(value="/documents", method=RequestMethod.GET)
 	public List<Document> getAll(){
 		return service.getAll();
 	}

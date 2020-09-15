@@ -10,25 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.formation.entities.Phase;
-import com.formation.service.IPhaseService;
+import com.formation.entities.Tache;
+import com.formation.service.ITacheService;
+
+
 
 @RestController
-@RequestMapping("/apiPhase")
+@RequestMapping("/apiTache")
 @CrossOrigin("*")
-public class PhaseWebservice {
-
+public class TacheWebservice {
+	
 	@Autowired
-	public IPhaseService service;
+	public ITacheService service;
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public Phase ajout(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Tache ajout(@RequestBody Tache t) {
+		return service.saveOrUpdate(t);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
-	public Phase update(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Tache update(@RequestBody Tache t) {
+		return service.saveOrUpdate(t);
 	}
 	
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
@@ -36,14 +38,14 @@ public class PhaseWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/phase/{id}", method=RequestMethod.GET)
-	public Phase getById(Long id) {
+	@RequestMapping(value="/tache/{id}", method=RequestMethod.GET)
+	public Tache getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/phases", method=RequestMethod.GET)
-	public List<Phase> getAll(){
+	@RequestMapping(value="/taches", method=RequestMethod.GET)
+	public List<Tache> getAll(){
 		return service.getAll();
 	}
-	
+
 }

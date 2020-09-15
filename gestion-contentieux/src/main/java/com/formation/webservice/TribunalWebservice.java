@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.formation.entities.Phase;
-import com.formation.service.IPhaseService;
+import com.formation.entities.Tribunal;
+import com.formation.service.ITribunalService;
 
 @RestController
-@RequestMapping("/apiPhase")
+@RequestMapping("/apiTribunal")
 @CrossOrigin("*")
-public class PhaseWebservice {
+public class TribunalWebservice {
 
 	@Autowired
-	public IPhaseService service;
+	public ITribunalService service;
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public Phase ajout(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Tribunal ajout(@RequestBody Tribunal t) {
+		return service.saveOrUpdate(t);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
-	public Phase update(@RequestBody Phase p) {
-		return service.saveOrUpdate(p);
+	public Tribunal update(@RequestBody Tribunal t) {
+		return service.saveOrUpdate(t);
 	}
 	
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
@@ -36,13 +36,13 @@ public class PhaseWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/phase/{id}", method=RequestMethod.GET)
-	public Phase getById(Long id) {
+	@RequestMapping(value="/tribunal/{id}", method=RequestMethod.GET)
+	public Tribunal getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/phases", method=RequestMethod.GET)
-	public List<Phase> getAll(){
+	@RequestMapping(value="/tribunaux", method=RequestMethod.GET)
+	public List<Tribunal> getAll(){
 		return service.getAll();
 	}
 	
