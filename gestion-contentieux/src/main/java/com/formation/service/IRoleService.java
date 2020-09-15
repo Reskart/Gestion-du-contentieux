@@ -8,7 +8,7 @@ public interface IRoleService {
 	
 	public Role saveOrUpdate(Role r);
 	public void delete(Long id);
-	public Role getById(Long Id);
+	public Role getById(Long id);
 	public List<Role> getAll();
 	
 
