@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -16,7 +19,7 @@ public class Tache implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private long idTache;
+	private Long idTache;
 	private Date dateCreation;
 	private String titre;
 	private String description;
@@ -52,6 +55,8 @@ public class Tache implements Serializable {
 		this.phases = phases;
 	}
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long getIdTache() {
 		return idTache;
 	}
