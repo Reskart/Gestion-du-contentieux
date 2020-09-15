@@ -1,14 +1,17 @@
 package com.formation.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Document {
+public class Document implements Serializable{
 
-	@Id
+
 	private long idDocument;
 	
 	private Date dateCreation;
@@ -35,6 +38,8 @@ public class Document {
 				+ ", description=" + description + "]";
 	}
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long getIdDocument() {
 		return idDocument;
 	}
