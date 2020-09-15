@@ -11,10 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class Tache implements Serializable {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private long IdTache;
 	private Date dateCreation;
 	private String titre;
