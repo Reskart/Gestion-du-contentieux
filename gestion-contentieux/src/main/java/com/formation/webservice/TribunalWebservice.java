@@ -36,12 +36,12 @@ public class TribunalWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/role/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/tribunal/{id}", method=RequestMethod.GET)
 	public Tribunal getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/roles", method=RequestMethod.GET)
+	@RequestMapping(value="/tribunaux", method=RequestMethod.GET)
 	public List<Tribunal> getAll(){
 		return service.getAll();
 	}

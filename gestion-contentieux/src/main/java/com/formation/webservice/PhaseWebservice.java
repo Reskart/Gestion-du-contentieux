@@ -38,12 +38,12 @@ public class PhaseWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/role/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/phase/{id}", method=RequestMethod.GET)
 	public Phase getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/roles", method=RequestMethod.GET)
+	@RequestMapping(value="/phases", method=RequestMethod.GET)
 	public List<Phase> getAll(){
 		return service.getAll();
 	}

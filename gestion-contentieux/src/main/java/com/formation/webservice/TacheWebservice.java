@@ -38,12 +38,12 @@ public class TacheWebservice {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/role/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/tache/{id}", method=RequestMethod.GET)
 	public Tache getById(Long id) {
 		return service.getById(id);
 	}
 	
-	@RequestMapping(value="/roles", method=RequestMethod.GET)
+	@RequestMapping(value="/taches", method=RequestMethod.GET)
 	public List<Tache> getAll(){
 		return service.getAll();
 	}
