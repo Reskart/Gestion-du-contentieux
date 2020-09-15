@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Phase implements Serializable{
@@ -64,11 +63,11 @@ public class Phase implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public long getIdPhase() {
+	public Long getIdPhase() {
 		return idPhase;
 	}
 
-	public void setIdPhase(long idPhase) {
+	public void setIdPhase(Long idPhase) {
 		this.idPhase = idPhase;
 	}
 

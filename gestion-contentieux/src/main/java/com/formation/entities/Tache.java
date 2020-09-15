@@ -57,11 +57,11 @@ public class Tache implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public long getIdTache() {
+	public Long getIdTache() {
 		return idTache;
 	}
 
-	public void setIdTache(long idTache) {
+	public void setIdTache(Long idTache) {
 		this.idTache = idTache;
 	}
 

@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -94,8 +93,7 @@ public class Affaire implements Serializable {
 		this.statut = statut;
 	}
 
-	@OneToMany
-	@JoinColumn(name="idTache")
+	@OneToMany(mappedBy="Tache")
 	public List<Tache> getTaches() {
 		return taches;
 	}
@@ -104,8 +102,7 @@ public class Affaire implements Serializable {
 		this.taches = taches;
 	}
 
-	@OneToMany
-	@JoinColumn(name="idDocument")
+	@OneToMany(mappedBy="Document")
 	public List<Document> getDocuments() {
 		return documents;
 	}
