@@ -21,11 +21,10 @@ public class Phase implements Serializable{
 	private Long idPhase;
 	private String nom;
 	private Date dateDebut;
-	
-	@ManyToOne
-	@JoinColumn(name="IdTache", nullable = false)
 	private Tache tache;
 	
+	@ManyToOne
+	@JoinColumn(name="idTache")
 	public Tache getTache() {
 		return tache;
 	}
@@ -33,8 +32,6 @@ public class Phase implements Serializable{
 	public void setTache(Tache tache) {
 		this.tache = tache;
 	}
-
-
 
 	@Override
 	public String toString() {
