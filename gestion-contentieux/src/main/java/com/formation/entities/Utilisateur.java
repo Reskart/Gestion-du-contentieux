@@ -1,11 +1,15 @@
 package com.formation.entities;
 
 import java.io.Serializable;
-
+import java.util.List;
+import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Utilisateur implements Serializable {
@@ -14,25 +18,52 @@ public class Utilisateur implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-		
+	
+	private List<Role> roles;
+	
+	
+	private List<Tache> taches;
 
 	private Long idUtilisateur;
 	private String email;
 	private String nomUtilisateur;
 	private String prenomUtilisateur;
 	
-	public Utilisateur() {
-		super();
+	@ManyToMany
+	@JoinTable( name = "T_Utilisateur_Roles_Associations",
+	joinColumns = @JoinColumn( name = "idUtilisateur" ),
+    inverseJoinColumns = @JoinColumn( name = "idRole" ) )
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public Utilisateur(Long idUtilisateur, String email, String nomUtilisateur, String prenomUtilisateur) {
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+	@OneToMany(mappedBy = "tache")
+	public List<Tache> getTaches() {
+		return taches;
+	}
+
+	public void setTaches(List<Tache> taches) {
+		this.taches = taches;
+	}
+
+	public Utilisateur(List<Role> roles, List<Tache> taches, Long idUtilisateur, String email, String nomUtilisateur,
+			String prenomUtilisateur) {
 		super();
+		this.roles = roles;
+		this.taches = taches;
 		this.idUtilisateur = idUtilisateur;
 		this.email = email;
 		this.nomUtilisateur = nomUtilisateur;
 		this.prenomUtilisateur = prenomUtilisateur;
 	}
-	
+
+	public Utilisateur() {
+		super();
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getIdUtilisateur() {
@@ -69,8 +100,8 @@ public class Utilisateur implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", email=" + email + ", nomUtilisateur=" + nomUtilisateur
-				+ ", prenomUtilisateur=" + prenomUtilisateur + "]";
+		return "Utilisateur [roles=" + roles + ", taches=" + taches + ", idUtilisateur=" + idUtilisateur + ", email="
+				+ email + ", nomUtilisateur=" + nomUtilisateur + ", prenomUtilisateur=" + prenomUtilisateur + "]";
 	}
 	
 	
