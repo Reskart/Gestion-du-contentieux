@@ -36,7 +36,7 @@ public class PhaseService implements IPhaseService{
 	@Override
 	public List<Phase> getAll() {
 		repo.findAll();
-		return null;
+		return repo.findAll();
 	}
 
 }
