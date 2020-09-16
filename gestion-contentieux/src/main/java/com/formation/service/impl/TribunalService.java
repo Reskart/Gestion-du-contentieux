@@ -36,7 +36,7 @@ public class TribunalService implements ITribunalService{
 	@Override
 	public List<Tribunal> getAll() {
 		repo.findAll();
-		return null;
+		return repo.findAll();
 	}
 
 }
