@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.formation.entities.Role;
 
+
 public interface IRoleService {
 	
 	public Role saveOrUpdate(Role r);

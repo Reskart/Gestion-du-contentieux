@@ -39,7 +39,7 @@ public class TacheWebservice {
 	}
 	
 	@RequestMapping(value="/tache/{id}", method=RequestMethod.GET)
-	public Tache getById(Long id) {
+	public Tache getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	
