@@ -31,4 +31,10 @@ public class AffaireService implements IAffaireService {
 		return null;
 	}
 
+	@Override
+	public void delete(Long id) {
+		repo.deleteById(id);
+		
+	}
+
 }
