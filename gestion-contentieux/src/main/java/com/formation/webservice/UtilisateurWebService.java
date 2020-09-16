@@ -1,5 +1,6 @@
 package com.formation.webservice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.formation.entities.Role;
 import com.formation.entities.Utilisateur;
 import com.formation.service.IUtilisateurService;
 
@@ -46,6 +48,16 @@ public class UtilisateurWebService {
 	@RequestMapping(value="utilisateurs", method=RequestMethod.GET)
 	public List<Utilisateur> getAll(){
 		return service.getAll();
+	}
+	
+	@RequestMapping(value="/roles/{id}", method=RequestMethod.GET)
+	public List<Long> getIdRole(@PathVariable Long id) {
+		List<Long> liste = new ArrayList<Long>();
+		for (Role role : service.getById(id).getRoles())
+		{
+			liste.add(role.getIdRole());
+		}
+		return liste;
 	}
 
 }
