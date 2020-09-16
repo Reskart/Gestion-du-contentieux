@@ -36,7 +36,7 @@ public class RoleService implements IRoleService{
 	@Override
 	public List<Role> getAll() {
 		repo.findAll();
-		return null;
+		return repo.findAll();
 	}
 
 }
