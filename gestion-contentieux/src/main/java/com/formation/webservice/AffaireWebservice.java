@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.formation.entities.Affaire;
-import com.formation.entities.Utilisateur;
 import com.formation.service.IAffaireService;
 
 @RestController
