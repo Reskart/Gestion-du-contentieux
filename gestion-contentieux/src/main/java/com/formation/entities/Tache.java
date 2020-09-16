@@ -119,7 +119,7 @@ public class Tache implements Serializable {
 		this.tribunal = tribunal;
 	}
 
-	@OneToMany(mappedBy = "Phase")
+	@OneToMany(mappedBy = "tache")
 	public List<Phase> getPhases() {
 		return phases;
 	}
