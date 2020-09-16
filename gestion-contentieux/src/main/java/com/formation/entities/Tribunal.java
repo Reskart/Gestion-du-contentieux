@@ -26,7 +26,7 @@ public class Tribunal implements Serializable{
 	private List<Tache> Taches;
 
 
-	@OneToMany(mappedBy="Tache")
+	@OneToMany(mappedBy="tribunal")
 	public List<Tache> getListTache() {
 		return Taches;
 	}
