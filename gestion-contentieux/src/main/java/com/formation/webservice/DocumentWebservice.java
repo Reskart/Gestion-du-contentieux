@@ -39,7 +39,7 @@ public class DocumentWebservice {
 	}
 	
 	@RequestMapping(value="/document/{id}", method=RequestMethod.GET)
-	public Document getById(Long id) {
+	public Document getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	

@@ -37,7 +37,7 @@ public class RoleWebservice {
 	}
 	
 	@RequestMapping(value="/role/{id}", method=RequestMethod.GET)
-	public Role getById(Long id) {
+	public Role getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	
