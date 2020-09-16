@@ -37,7 +37,7 @@ public class TribunalWebservice {
 	}
 	
 	@RequestMapping(value="/tribunal/{id}", method=RequestMethod.GET)
-	public Tribunal getById(Long id) {
+	public Tribunal getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	
