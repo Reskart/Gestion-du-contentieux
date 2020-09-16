@@ -3,18 +3,25 @@ package com.formation.entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.JoinColumn;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idUtilisateur")
 public class Utilisateur implements Serializable {
 
 	/**
@@ -32,7 +39,8 @@ public class Utilisateur implements Serializable {
 	private String nomUtilisateur;
 	private String prenomUtilisateur;
 	
-	@ManyToMany
+	
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable( name = "T_Utilisateur_Roles_Associations",
 	joinColumns = @JoinColumn( name = "idUtilisateur" ),
     inverseJoinColumns = @JoinColumn( name = "idRole" ) )
