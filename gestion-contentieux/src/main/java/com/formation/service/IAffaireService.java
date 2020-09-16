@@ -9,5 +9,6 @@ public interface IAffaireService {
 	public Affaire getById(Long id);
 	public Affaire saveOrUpdate(Affaire a);
 	public List<Affaire> getAll();
+	public void delete(Long id);
 
 }
