@@ -37,7 +37,7 @@ public class PhaseWebservice {
 	}
 	
 	@RequestMapping(value="/phase/{id}", method=RequestMethod.GET)
-	public Phase getById(Long id) {
+	public Phase getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	

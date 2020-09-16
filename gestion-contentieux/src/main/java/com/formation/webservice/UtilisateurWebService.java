@@ -37,7 +37,9 @@ public class UtilisateurWebService {
 	}
 	
 	@RequestMapping(value="/utilisateur/{id}", method=RequestMethod.GET)
-	public Utilisateur getById(@PathVariable("id") Long id) {
+
+	public Utilisateur getById(@PathVariable Long id) {
+
 		return service.getById(id);
 	}
 	
