@@ -3,7 +3,6 @@ package com.formation.webservice;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,9 +21,18 @@ public class AffaireWebservice {
 	@Autowired
 	public IAffaireService service;
 	
-	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public Affaire ajout(@RequestBody Affaire a) {
 		return service.saveOrUpdate(a);
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public Affaire update(@RequestBody Affaire a) {
+		return service.saveOrUpdate(a);
+	}
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		service.delete(id);
 	}
 	
 	@RequestMapping(value = "/affaires", method = RequestMethod.GET)
