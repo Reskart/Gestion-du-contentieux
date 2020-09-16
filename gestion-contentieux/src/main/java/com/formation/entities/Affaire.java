@@ -93,7 +93,7 @@ public class Affaire implements Serializable {
 		this.statut = statut;
 	}
 
-	@OneToMany(mappedBy="Tache")
+	@OneToMany(mappedBy="affaire")
 	public List<Tache> getTaches() {
 		return taches;
 	}
@@ -102,7 +102,7 @@ public class Affaire implements Serializable {
 		this.taches = taches;
 	}
 
-	@OneToMany(mappedBy="Document")
+	@OneToMany(mappedBy="affaire")
 	public List<Document> getDocuments() {
 		return documents;
 	}
