@@ -41,8 +41,8 @@ public class AffaireWebservice {
 	}
 	
 	@RequestMapping(value = "/affaire/{id}", method = RequestMethod.GET)
-	public Affaire recherche(@PathVariable Long idAffaire) {
-		return service.getById(idAffaire);
+	public Affaire recherche(@PathVariable Long id) {
+		return service.getById(id);
 	}
 	
 
