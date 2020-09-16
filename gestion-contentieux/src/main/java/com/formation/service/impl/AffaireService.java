@@ -27,6 +27,7 @@ public class AffaireService implements IAffaireService {
 	}
 
 	@Override
+
 	public void delete(Long id) {
 		repo.deleteById(id);
 		

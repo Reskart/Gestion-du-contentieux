@@ -38,10 +38,13 @@ public class AffaireWebservice {
 	@RequestMapping(value = "/affaire/{id}", method = RequestMethod.GET)
 	public Affaire recherche(@PathVariable Long id) {
 		return service.getById(id);
+
+
 	}
 	@RequestMapping(value="affaires", method=RequestMethod.GET)
 	public List<Affaire> getAll(){
 		return service.getAll();
+
 	}
 
 }
