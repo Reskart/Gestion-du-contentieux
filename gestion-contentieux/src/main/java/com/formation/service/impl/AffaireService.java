@@ -27,8 +27,8 @@ public class AffaireService implements IAffaireService {
 
 	@Override
 	public List<Affaire> getAll() {
-		repo.findAll();
-		return null;
+		
+		return repo.findAll();
 	}
 
 	@Override
