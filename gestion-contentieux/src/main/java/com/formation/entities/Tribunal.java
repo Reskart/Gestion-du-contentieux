@@ -4,15 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idTribunal")
 public class Tribunal implements Serializable{
 
 	/**
@@ -23,13 +26,13 @@ public class Tribunal implements Serializable{
 
 	private Long idTribunal;
 	private String adresse;
-	private Double fax;
-	private Double tel;
+	private String fax;
+	private String tel;
 	private String region;
 	private List<Tache> Taches;
 
 
-	@OneToMany(mappedBy="tribunal")
+	@OneToMany(mappedBy="tribunal",orphanRemoval = true,fetch = FetchType.LAZY)
 	public List<Tache> getListTache() {
 		return Taches;
 	}
@@ -38,12 +41,13 @@ public class Tribunal implements Serializable{
 		this.Taches = listTache;
 	}
 
-	public Tribunal() {
-		super();
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public Long getIdTribunal() {
+		return idTribunal;
 	}
 
-
-	public Tribunal(Long idTribunal, String adresse, Double fax, Double tel, String region, List<Tache> taches) {
+	public Tribunal(Long idTribunal, String adresse, String fax, String tel, String region, List<Tache> taches) {
 		super();
 		this.idTribunal = idTribunal;
 		this.adresse = adresse;
@@ -53,50 +57,44 @@ public class Tribunal implements Serializable{
 		Taches = taches;
 	}
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Long getIdTribunal() {
-		return idTribunal;
+	public Tribunal() {
+		super();
 	}
-	
-	public void setIdTribunal(Long idTribunal) {
-		this.idTribunal = idTribunal;
-	}
-	
+
 	public String getAdresse() {
 		return adresse;
 	}
-	
+
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
-	public Double getFax() {
+
+	public String getFax() {
 		return fax;
 	}
-	
-	public void setFax(Double fax) {
+
+	public void setFax(String fax) {
 		this.fax = fax;
 	}
-	
-	public Double getTel() {
+
+	public String getTel() {
 		return tel;
 	}
-	
-	public void setTel(Double tel) {
+
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
+
 	public String getRegion() {
 		return region;
 	}
-	
+
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+
+	public void setIdTribunal(Long idTribunal) {
+		this.idTribunal = idTribunal;
 	}
 
 	@Override
@@ -104,6 +102,8 @@ public class Tribunal implements Serializable{
 		return "Tribunal [idTribunal=" + idTribunal + ", adresse=" + adresse + ", fax=" + fax + ", tel=" + tel
 				+ ", region=" + region + ", Taches=" + Taches + "]";
 	}
+	
+
 	
 
 	

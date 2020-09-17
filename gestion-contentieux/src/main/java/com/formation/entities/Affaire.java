@@ -4,15 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idAffaire")
 public class Affaire implements Serializable {
 
 	/**
@@ -96,7 +99,7 @@ public class Affaire implements Serializable {
 		this.statut = statut;
 	}
 
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire",orphanRemoval = true,fetch = FetchType.LAZY)
 	public List<Tache> getTaches() {
 		return taches;
 	}
@@ -105,7 +108,7 @@ public class Affaire implements Serializable {
 		this.taches = taches;
 	}
 
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire",orphanRemoval = true,fetch = FetchType.LAZY)
 	public List<Document> getDocuments() {
 		return documents;
 	}

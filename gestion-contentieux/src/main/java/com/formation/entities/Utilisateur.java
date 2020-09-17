@@ -3,6 +3,7 @@ package com.formation.entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.JoinColumn;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -47,7 +48,8 @@ public class Utilisateur implements Serializable {
 		this.roles = roles;
 	}
 	
-	@OneToMany(mappedBy = "user")
+	//cascade = CascadeType.ALL, 
+	@OneToMany(mappedBy = "user",orphanRemoval = true,fetch = FetchType.LAZY)
 	public List<Tache> getTaches() {
 		return taches;
 	}
