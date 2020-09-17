@@ -9,6 +9,9 @@ import { TacheComponent } from './tache/tache.component';
 import { TribunauxComponent } from './tribunaux/tribunaux.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { DocumentComponent } from './document/document.component';
+import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
+import { AffaireAccueilComponent } from './affaire/affaire-accueil/affaire-accueil.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { AccueilComponent } from './accueil/accueil.component';
     TribunauxComponent,
     TableaubordComponent,
     AccueilComponent,
+    DocumentComponent,
+    AffaireRechercheComponent,
+    AffaireAccueilComponent
     
   ],
   imports: [
