@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gestioncontentieuxfront"
+    }
+  },
+  "defaultProject": "gestioncontentieuxfront",
+  "cli": {
+    "analytics": "f705f297-3e20-4e21-8ebc-86a809f492d9"
+  }
 }
