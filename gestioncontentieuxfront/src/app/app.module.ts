@@ -9,7 +9,11 @@ import { TacheComponent } from './tache/tache.component';
 import { TribunauxComponent } from './tribunaux/tribunaux.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { ServiceComponent } from './service/service.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserUpdateComponent } from './user/user-list/user-update/user-update.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { RoleComponent } from './role/role.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,16 @@ import { ServiceComponent } from './service/service.component';
     TribunauxComponent,
     TableaubordComponent,
     AccueilComponent,
+    UserFormComponent,
+    UserUpdateComponent,
+    UserListComponent,
+    RoleComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
