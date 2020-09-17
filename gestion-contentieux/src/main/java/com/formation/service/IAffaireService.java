@@ -10,5 +10,6 @@ public interface IAffaireService {
 	public Affaire saveOrUpdate(Affaire a);
 	public List<Affaire> getAll();
 	public void delete(Long id);
+	public Affaire findByRef(String ref);
 
 }

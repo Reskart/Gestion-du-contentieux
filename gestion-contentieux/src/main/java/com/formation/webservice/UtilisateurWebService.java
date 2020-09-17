@@ -60,4 +60,10 @@ public class UtilisateurWebService {
 		return liste;
 	}
 
+	@RequestMapping(value="/utilisateurName/{name}", method=RequestMethod.GET)
+	public List<Utilisateur> getByName(@PathVariable String name){
+		return service.findByName(name);
+		
+	}
+	
 }

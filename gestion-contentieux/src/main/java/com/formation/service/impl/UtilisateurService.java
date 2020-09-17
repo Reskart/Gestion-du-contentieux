@@ -35,6 +35,12 @@ public class UtilisateurService implements IUtilisateurService {
 	public List<Utilisateur> getAll() {
 		return repo.findAll();
 	}
+
+	@Override
+	public List<Utilisateur> findByName(String name) {
+
+		return repo.findByNomUtilisateur(name);
+	}
 	
 	
 

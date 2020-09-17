@@ -13,10 +13,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-
 @ComponentScan
 @EnableJpaRepositories
-
 public class GestionContentieuxApplication {
 
 	public static void main(String[] args) {
