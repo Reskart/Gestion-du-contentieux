@@ -35,4 +35,10 @@ public class AffaireService implements IAffaireService {
 		return repo.findAll();
 	}
 
+	@Override
+	public Affaire findByRef(String ref) {
+		
+		return repo.findByReference(ref);
+	}
+
 }
