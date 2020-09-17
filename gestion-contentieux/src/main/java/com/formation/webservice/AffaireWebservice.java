@@ -45,5 +45,11 @@ public class AffaireWebservice {
 		return service.getAll();
 
 	}
+	
+	@RequestMapping(value="affaireRef/{ref}", method=RequestMethod.GET)
+	public Affaire getByRef(@PathVariable String ref) {
+		return service.findByRef(ref);
+		
+	}
 
 }

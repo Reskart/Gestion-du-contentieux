@@ -16,5 +16,7 @@ public interface IUtilisateurService {
 	
 	public List<Utilisateur> getAll();
 	
+	public List<Utilisateur> findByName(String name);
+	
 
 }
