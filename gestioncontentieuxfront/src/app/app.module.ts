@@ -8,6 +8,8 @@ import { AffaireComponent } from './affaire/affaire.component';
 import { TacheComponent } from './tache/tache.component';
 import { TribunauxComponent } from './tribunaux/tribunaux.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TableaubordComponent } from './tableaubord/tableaubord.component';
     AffaireComponent,
     TacheComponent,
     TribunauxComponent,
-    TableaubordComponent
+    TableaubordComponent,
+    AccueilComponent,
+    
   ],
   imports: [
     BrowserModule,
