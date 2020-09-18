@@ -1,1 +1,14 @@
-<p>tableaubord works!</p>
+Affaire en cours : <input type="button" ng-model="En cours" ng-init="myVar = false">
+<div *ngFor="let a of affaires">
+
+
+<div *ngIf="En cours">
+    <tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
+     text-align:center;">
+        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.reference}}</td>
+        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.titre}}</td>
+        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.description}}</td>
+        <td *ngIf="1" style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.statut}}</td>
+    </tr>
+</div>
+    </div>
