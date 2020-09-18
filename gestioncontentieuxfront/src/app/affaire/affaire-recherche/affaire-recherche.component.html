@@ -1,14 +1,14 @@
 
 <h2>Recherche des Affaires</h2>
 
-<form>
+<form [formGroup]="form">
 <p>
     <label for="refAffaire">Référence de l'affaire</label> : <input type="text" name="refAffaire" id="refAffaire" formControlName="refAffaire" required/></p>
     <input type="submit" value="Rechercher"/>
 </form>
 
 <br>
-<div class="row" *ngIf="Affaire=null">
+<div class="row" >
   <div class="container">
     <div class="card">
       <div class="card-header">Affaire trouvée</div>
@@ -20,7 +20,7 @@
             <th>Prenom</th>
             <th>Age</th>
           </thead>
-          <tr *ngFor="Affaire">
+          <tr >
             <td> {{Affaire.id}}</td>
           </tr>
         </table>

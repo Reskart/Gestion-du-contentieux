@@ -10,13 +10,14 @@ import { TribunauxComponent } from './tribunaux/tribunaux.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DocumentComponent } from './document/document.component';
-import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 import { AffaireAccueilComponent } from './affaire/affaire-accueil/affaire-accueil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserUpdateComponent } from './user/user-list/user-update/user-update.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RoleComponent } from './role/role.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { RoleComponent } from './role/role.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
