@@ -11,7 +11,6 @@ export class AffaireRechercheComponent implements OnInit {
 
   form: FormGroup;
   Affaire: any;
-  isNull: boolean;
 
   constructor(private affaireService: AffaireService) { }
 
@@ -21,17 +20,14 @@ export class AffaireRechercheComponent implements OnInit {
       refAffaire: new FormControl(null, Validators.required)
     })
 
-    this.isNull=true;
 
 }
 
   findByRef() {
 
-    this.affaireService.getAffaire(this.form.value).subscribe((value:any) =>
-    this.Affaire = value
+    this.affaireService.getAffaire(this.form.value['refAffaire']).subscribe(data => {
+    this.Affaire = data;}
     );
-    console.log(this.Affaire);
-    this.isNull = false;
 
   }
 

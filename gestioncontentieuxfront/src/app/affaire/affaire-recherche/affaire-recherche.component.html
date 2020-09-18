@@ -1,11 +1,13 @@
 
 <h2>Recherche des Affaires</h2>
 
+<div>
 <form [formGroup]="form">
 <p>
     <label for="refAffaire">Référence de l'affaire</label> : <input type="text" name="refAffaire" id="refAffaire" formControlName="refAffaire" required/></p>
-    <input type="submit" value="Rechercher"/>
+    <input type="submit" value="Rechercher" (click)="findByRef()"/>
 </form>
+</div>
 
 <br>
 <div class="row" >
