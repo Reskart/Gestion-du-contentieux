@@ -49,7 +49,7 @@ export class UserListComponent implements OnInit {
     this.userservice.getOne(this.id).subscribe(data=>{
       this.user=data;    });
 
-      this.userS = JSON.stringify(this.userA);
+      this.userS = JSON.stringify(this.user);
   }
 
 }
