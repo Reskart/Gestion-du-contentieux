@@ -17,6 +17,7 @@ import { UserUpdateComponent } from './user/user-list/user-update/user-update.co
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-r
     TribunauxComponent,
     TableaubordComponent,
     AccueilComponent,
+    AjoutTacheComponent,
     DocumentComponent,
     AffaireRechercheComponent,
     AffaireAccueilComponent,
