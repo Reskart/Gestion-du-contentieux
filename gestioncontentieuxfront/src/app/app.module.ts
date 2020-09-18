@@ -12,6 +12,11 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { DocumentComponent } from './document/document.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 import { AffaireAccueilComponent } from './affaire/affaire-accueil/affaire-accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserUpdateComponent } from './user/user-list/user-update/user-update.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { RoleComponent } from './role/role.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +29,17 @@ import { AffaireAccueilComponent } from './affaire/affaire-accueil/affaire-accue
     AccueilComponent,
     DocumentComponent,
     AffaireRechercheComponent,
-    AffaireAccueilComponent
+    AffaireAccueilComponent,
+    UserFormComponent,
+    UserUpdateComponent,
+    UserListComponent,
+    RoleComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
