@@ -27,8 +27,7 @@ export class UserListComponent implements OnInit {
   id:any;
 
   user:any;
-  userS;
-  userA;
+  userS:any={make:null};
   
  
 
@@ -46,10 +45,13 @@ export class UserListComponent implements OnInit {
     this.id=this.formValue['id'];
 
 
+
+
     this.userservice.getOne(this.id).subscribe(data=>{
       this.user=data;    });
+      
 
-      this.userS = JSON.stringify(this.userA);
+      this.userS = JSON.parse(JSON.stringify(this.user));
   }
 
 }
