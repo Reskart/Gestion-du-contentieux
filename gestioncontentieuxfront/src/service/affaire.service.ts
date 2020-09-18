@@ -11,6 +11,6 @@ export class AffaireService {
   constructor(private http:HttpClient) { }
 
   getAffaire(ref) {
-    return this.http.get<any>(this.URL+'/find/'+ref);
+    return this.http.get<any>(this.URL+'/affaireRef/'+ref);
   }
 }

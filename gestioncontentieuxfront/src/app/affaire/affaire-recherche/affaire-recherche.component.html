@@ -3,6 +3,30 @@
 
 <form>
 <p>
-    <label for="refAffaire">Référence de l'affaire</label> : <input type="search" name="refAffaire" id="refAffaire" formControlName="refAffaire" required/></p>
+    <label for="refAffaire">Référence de l'affaire</label> : <input type="text" name="refAffaire" id="refAffaire" formControlName="refAffaire" required/></p>
     <input type="submit" value="Rechercher"/>
 </form>
+
+<br>
+<div class="row" *ngIf="Affaire=null">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Affaire trouvée</div>
+      <div class="card-body">
+        <table class="table">
+          <thead class="thead-light">
+            <th>Affaire</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Age</th>
+          </thead>
+          <tr *ngFor="Affaire">
+            <td> {{Affaire.id}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
