@@ -25,9 +25,11 @@ export class UserListComponent implements OnInit {
   form: FormGroup;
   formValue:any;
   id:any;
+  name:any;
 
   user:any;
   userS:any={make:null};
+  userSS:any[]=[]
   
  
 
@@ -35,23 +37,39 @@ export class UserListComponent implements OnInit {
     this.userservice.findAll().subscribe(data=>{
       this.utilisateurs = data as []; });
       this.form=new FormGroup({
-        id:new FormControl(null, Validators.required)
+        name:new FormControl(null, Validators.required)
       })
 
   }
 
-  finduser(){
-    this.formValue=this.form.value;
-    this.id=this.formValue['id'];
+  // finduser(){
+  //   this.formValue=this.form.value;
+  //   this.id=this.formValue['id'];
 
 
 
 
-    this.userservice.getOne(this.id).subscribe(data=>{
-      this.user=data;    });
+  //   this.userservice.getOne(this.id).subscribe(data=>{
+  //     this.user=data;    });
       
 
-      this.userS = JSON.parse(JSON.stringify(this.user));
+  //     this.userS = JSON.parse(JSON.stringify(this.user));
+  // }
+
+  finduserName(){
+    this.formValue=this.form.value;
+    this.name=this.formValue['name'];
+
+
+
+
+    this.userservice.getName(this.name).subscribe(data=>{
+      this.user=data;    });
+
+      this.userSS=JSON.parse(JSON.stringify(this.user));
+      
+
+      // this.userS = JSON.stringify(this.user);
   }
 
 }
