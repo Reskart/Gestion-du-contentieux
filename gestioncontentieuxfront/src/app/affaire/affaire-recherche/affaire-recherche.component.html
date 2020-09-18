@@ -4,28 +4,35 @@
 <div>
 <form [formGroup]="form">
 <p>
-    <label for="reference">Référence de l'affaire</label> : <input type="text" name="reference" id="reference" formControlName="reference" required/></p>
+    <label for="reference">Référence de l'affaire</label> : <input type="text" name="reference" id="reference" formControlName="reference" /></p>
     <input type="submit" value="Rechercher" (click)="findByRef()"/>
 </form>
 </div>
 
 <br>
-<div class="row" >
+<div class="row" *ngIf="affichage">
   <div class="container">
     <div class="card">
       <div class="card-header">Résultat</div>
-      <div class="card-body">
-        <table class="table">
+      <div class="card-body" >
+        <table class="table" *ngIf="Affaire != null">
           <thead class="thead-light">
-            <th>Affaire</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Age</th>
+            <th>Réference</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
           </thead>
-          <tr *ngFor="let a of Affaire">
-            <td> {{a.reference}}</td>
+          <tr>
+            <td> {{Affaire.reference}}</td>
+            <td> {{Affaire.titre}}</td>
+            <td> {{Affaire.description}}</td>
+            <td> {{Affaire.statut}}</td>
           </tr>
         </table>
+
+        <table class="table" *ngIf="Affaire === null">
+            <p>L'élement que vous cherchez n'existe pas.</p>
+          </table>
       </div>
     </div>
   </div>

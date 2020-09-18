@@ -10,12 +10,16 @@ import { AffaireService } from 'src/service/affaire.service';
 export class AffaireRechercheComponent implements OnInit {
 
   form: FormGroup;
-  Affaire: any[] = [];
-  affaires: any;
+  Affaire: any={make:null};
+  result:boolean;
+  affichage:boolean;
 
   constructor(private affaireService: AffaireService) { }
 
   ngOnInit(): void {
+
+    this.affichage=false;
+    console.log(this.affichage);
 
     this.form = new FormGroup({
       reference: new FormControl(null, Validators.required)
@@ -26,11 +30,16 @@ export class AffaireRechercheComponent implements OnInit {
 
   findByRef() {
 
+    
+
     this.affaireService.getAffaire(this.form.value['reference']).subscribe(data => {
     this.Affaire = data;}
     );
 
-    this.affaires = JSON.stringify(this.Affaire);
+    this.affichage=true;
+    console.log(this.affichage);
+
+
 
   }
 
