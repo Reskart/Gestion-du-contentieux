@@ -17,6 +17,10 @@ export class UserService {
 
     return this.http.get<any>(this.URL+'/utilisateur/'+id);
   }
+  getName(name) {
+
+    return this.http.get<any>(this.URL+'/utilisateurName/'+name);
+  }
   findAll() {
     return this.http.get<any[]>(this.URL+'/utilisateurs').pipe(map(value =>this.utilisateurs=value))
   }
