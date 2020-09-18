@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
+import { AffaireAccueilComponent } from './affaire/affaire-accueil/affaire-accueil.component';
+import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 import { AffaireComponent } from './affaire/affaire.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
 import { TacheComponent } from './tache/tache.component';
@@ -11,13 +13,17 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
-
   {path : 'user', component:UserComponent, children:[{path:'form', component:UserFormComponent},{path:'list', component:UserListComponent}]},
+  {path: 'affaire', component:AffaireComponent, children: [
+    {path : 'recherche', component:AffaireRechercheComponent},
+    {path: 'accueil', component: AffaireAccueilComponent}
+  ]},
+
   
-  {path: 'affaire', component:AffaireComponent},
   {path:'TDB', component:TableaubordComponent},
   {path:'tache', component:TacheComponent},
   {path:'tribunaux', component:TribunauxComponent}
+
 ];
 
 @NgModule({
