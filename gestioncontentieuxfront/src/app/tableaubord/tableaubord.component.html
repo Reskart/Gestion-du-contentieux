@@ -1,4 +1,4 @@
-Affaire en cours : <input type="button" ng-model="En cours" ng-init="myVar = false">
+Affaire en cours : <input type="checkbox" ng-model="En cours" ng-init="myVar = false">
 <div *ngFor="let a of affaires">
 
 
@@ -11,4 +11,4 @@ Affaire en cours : <input type="button" ng-model="En cours" ng-init="myVar = fal
         <td *ngIf="1" style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.statut}}</td>
     </tr>
 </div>
-    </div>
+</div>

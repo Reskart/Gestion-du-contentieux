@@ -13,6 +13,8 @@ export class TableaubordComponent implements OnInit {
   affaires:any[]=[];
 
   ngOnInit(): void {
+    const myVar = true;
+
     this.tdbservice.findAll().subscribe(data =>{
       this.affaires = data as []; });
   }
