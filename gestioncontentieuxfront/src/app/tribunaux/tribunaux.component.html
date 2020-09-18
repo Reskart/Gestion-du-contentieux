@@ -1,4 +1,31 @@
-<h2>Liste des Tribunaux</h2>
+<div class="row">
+    <div class="col-md-4">
+    <div class="img-logo" style="text-align:left;">
+        <a href=""role="button">
+            <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+            height="200px" width="200px"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-4">
+<h2 style="text-align: center;padding-top:75px">Liste des Tribunaux</h2>
+</div>
+</div>
+<div style="margin-right: 20%;margin-left:26%">
+<tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
+    text-align:center;font-weight:bold;font-size:large">
+    <td style="border: solid 1px; border-color:white;padding-top:5px;padding-bottom:5px;width:200px;">Adresse</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;">Fax</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;">Tel</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;">Région</td>
+</tr>
 <div *ngFor="let u of tribunaux">
-    <h3>{{u.adresse}}</h3>
+<tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
+ text-align:center;">
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{u.adresse}}</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{u.fax}}</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{u.tel}}</td>
+    <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{u.region}}</td>
+</tr>
+</div>
 </div>
