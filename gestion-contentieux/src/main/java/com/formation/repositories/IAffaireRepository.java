@@ -10,5 +10,6 @@ import com.formation.entities.Affaire;
 public interface IAffaireRepository extends JpaRepository<Affaire, Long> {
 	
 	public Affaire findByReference(String ref);
+	public Affaire findByStatut(int statut);
 
 }

@@ -2,10 +2,14 @@
 
 <div><form [formGroup]="form">
     
-    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="id">
+    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="name">
 </form>
-    <button type="submit" class="btn btn-primary" (click)="finduser()">Rechercher</button>
-    {{userS.email}}<br/>
+    <button type="submit" class="btn btn-primary" (click)="finduserName()">Rechercher</button>
+    <tr *ngFor="let ut of userSS">
+        <td>{{ut.email}}</td>
+
+    </tr>
+    <!-- {{userS}}<br/> -->
 
 
 
@@ -17,6 +21,7 @@
     <tr *ngFor="let u of utilisateurs">
         <td>{{u.idUtilisateur}}</td>
         <td>{{u.email}}</td>
+        <td>{{u.nomUtilisateur}}</td>
     </tr>
 
 
