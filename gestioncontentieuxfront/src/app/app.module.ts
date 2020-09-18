@@ -14,6 +14,7 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserUpdateComponent } from './user/user-list/user-update/user-update.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RoleComponent } from './role/role.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { RoleComponent } from './role/role.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

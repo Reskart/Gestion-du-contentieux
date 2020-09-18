@@ -1,8 +1,12 @@
 <p>user-list works!</p>
 
-<div>
-    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" id="nomU">
-    <button type="submit" class="btn btn-primary">Rechercher</button>
+<div><form [formGroup]="form">
+    
+    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="id">
+</form>
+    <button type="submit" class="btn btn-primary" (click)="finduser()">Rechercher</button>
+    {{userS}}<br/>
+
 
 
     
