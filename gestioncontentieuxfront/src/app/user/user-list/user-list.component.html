@@ -1,0 +1,24 @@
+<p>user-list works!</p>
+
+<div><form [formGroup]="form">
+    
+    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="id">
+</form>
+    <button type="submit" class="btn btn-primary" (click)="finduser()">Rechercher</button>
+    {{userS}}<br/>
+
+
+
+    
+</div>
+
+<div>
+
+    <tr *ngFor="let u of utilisateurs">
+        <td>{{u.idUtilisateur}}</td>
+        <td>{{u.email}}</td>
+    </tr>
+
+
+
+</div>

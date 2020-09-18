@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { TacheService } from './../../../service/tache.service';
+import { FormControl, FormGroup , Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { TacheService } from 'src/service/tache.service';
 
 @Component({
   selector: 'app-ajout-tache',
@@ -10,7 +10,6 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class AjoutTacheComponent implements OnInit {
 
-  tache: Tache;
   form: FormGroup;
   mode: any;
   activatedRoute: any;
@@ -26,24 +25,22 @@ export class AjoutTacheComponent implements OnInit {
       titre : new FormControl(null),
       description : new FormControl(null),
       statutAudience : new FormControl(null)
-      })
+    })
 
-      this.activatedRoute.params.subscribe ((param: Params) => {
-        this.index = param['index'];
+    this.activatedRoute.params.subscribe ((param: Params) => {
+      this.index = param['index'];
 
-        if(this.index) {
-          this.form.setValue(this.tacheService.taches [this.index]);
-          }
-      })
-
-    //this.mode = this.UserService.editMode;
-    }
-
-    addTache() {
-      this.tacheService.add(this.form.value).subscribe(response =>{
+      if(this.index) {
+        this.form.setValue(this.tacheService.taches [this.index]);
+      }
+    })
+  }
+  
+  addTache() {
+    this.tacheService.add(this.form.value).subscribe(response =>{
       this.tacheService.taches.push(response.body);
-      console.log(this.tacheService.taches);
       this.form.reset();
     });
   }
 }
+

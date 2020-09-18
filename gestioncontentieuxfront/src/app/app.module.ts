@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +9,12 @@ import { TacheComponent } from './tache/tache.component';
 import { TribunauxComponent } from './tribunaux/tribunaux.component';
 import { TableaubordComponent } from './tableaubord/tableaubord.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserUpdateComponent } from './user/user-list/user-update/user-update.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { RoleComponent } from './role/role.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 
 @NgModule({
@@ -21,13 +26,19 @@ import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
     TribunauxComponent,
     TableaubordComponent,
     AccueilComponent,
-    AjoutTacheComponent
+    AjoutTacheComponent,
+    UserFormComponent,
+    UserUpdateComponent,
+    UserListComponent,
+    RoleComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
