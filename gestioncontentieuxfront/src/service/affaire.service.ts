@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 export class AffaireService {
 
   affaires: any[] = [];
+  editMode = false;
 
   URL = 'http://localhost:8080/apiAffaire';
 
@@ -23,6 +24,14 @@ export class AffaireService {
 
   addAffaire(affaire) {
     return this.http.post(this.URL+'/add', affaire, { observe: 'response'} );
+  }
+
+  updateAffaire(affaire) {
+    return this.http.put(this.URL+'/update', affaire, { observe : 'response'});
+  }
+
+  getOne(id){
+    return this.http.get<any>(this.URL+'/affaire/'+id);
   }
 
 }

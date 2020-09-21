@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: 'affaire', component:AffaireComponent, children: [
     {path : 'recherche', component:AffaireRechercheComponent},
     {path: 'accueil', component: AffaireAccueilComponent},
-    {path: 'ajout', component: AffaireAjoutComponent}
+    {path: 'ajout', component: AffaireAjoutComponent},
+    {path: 'edit/:id', component: AffaireAjoutComponent}
   ]},
 
   

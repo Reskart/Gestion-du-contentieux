@@ -24,7 +24,7 @@
             <td>{{a.titre}}</td>
             <td>{{a.description}}</td>
             <td>{{a.statut}}</td>
-            <td><input type="submit" value="Edit" class="btn btn-warning" /></td>
+            <td><input type="submit" value="Edit" class="btn btn-warning" (click)="edit(a.idAffaire)" /></td>
 
           </tr>
         </table>
