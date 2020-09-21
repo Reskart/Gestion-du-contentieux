@@ -20,4 +20,8 @@ export class TacheService {
   add(tache){
     return this.http.post(this.URL+'/add',tache,{observe:'response'});
   }
+
+  getOne(id) {
+    return  this.http.get<any>(this.URL+'/tache/'+id);
+}
 }

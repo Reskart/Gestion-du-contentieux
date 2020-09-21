@@ -11,6 +11,9 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserComponent } from './user/user.component';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
+import { EncoursComponent } from './tableaubord/encours/encours.component';
+import { AvenirComponent } from './tableaubord/avenir/avenir.component';
+import { ArchiveComponent } from './tableaubord/archive/archive.component';
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
@@ -22,6 +25,10 @@ const routes: Routes = [
 
   
   {path:'TDB', component:TableaubordComponent},
+  {path:'tribunaux', component:TribunauxComponent},
+  {path:'encours',component:EncoursComponent},
+  {path:'avenir',component:AvenirComponent},
+  {path:'archive',component:ArchiveComponent},
   {path:'tache', component:TacheComponent},
   {path:'tache/ajout-tache', component:AjoutTacheComponent},
   {path:'tribunaux', component:TribunauxComponent}
