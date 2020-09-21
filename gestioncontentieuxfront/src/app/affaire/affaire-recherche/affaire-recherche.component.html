@@ -1,12 +1,19 @@
-
-<h2>Recherche des Affaires</h2>
-
-<div>
-<form [formGroup]="form">
-<p>
-    <label for="reference">Référence de l'affaire</label> : <input type="text" name="reference" id="reference" formControlName="reference" /></p>
-    <input type="submit" value="Rechercher" (click)="findByRef()"/>
-</form>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+  <h2>Recherche des Affaires</h2>
+</div>
+<div class="row">
+  <div class="container">
+    <form [formGroup]="form">
+      <fieldset fieldset class="form-group">
+        <div class="form-group">
+          <label class="form-control form-control-lg" for="reference">Référence de l'affaire</label>
+          <input class="form-control form-control-lg" placeholder="REF00001" type="text" name="reference" id="reference" formControlName="reference" />
+          <br>
+          <input class="btn btn-primary" type="submit" value="Rechercher" (click)="findByRef()"/>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
 
 <br>
