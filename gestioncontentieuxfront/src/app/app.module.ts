@@ -19,6 +19,13 @@ import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
+import { CalendrierComponent } from './tache/calendrier/calendrier.component';
+
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,8 @@ import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-r
     UserFormComponent,
     UserUpdateComponent,
     UserListComponent,
-    RoleComponent
+    RoleComponent,
+    CalendrierComponent,
     
   ],
   imports: [
@@ -44,7 +52,19 @@ import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-r
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    NgbModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

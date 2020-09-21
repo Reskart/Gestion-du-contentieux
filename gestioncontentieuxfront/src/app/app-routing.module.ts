@@ -11,6 +11,7 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserComponent } from './user/user.component';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
+import { CalendrierComponent } from './tache/calendrier/calendrier.component';
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
