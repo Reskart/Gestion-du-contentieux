@@ -25,7 +25,7 @@ export class AffaireAjoutComponent implements OnInit {
       reference : new FormControl(null, Validators.required),
       titre : new FormControl(null, Validators.required),
       description : new FormControl(null, Validators.required),
-      statut : new FormControl(null, [Validators.min(0), Validators.max(2)])
+      statut : new FormControl(null, [Validators.min(0), Validators.max(2), Validators.required])
 
     });
 
