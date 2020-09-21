@@ -29,9 +29,9 @@ const routes: Routes = [
   
   {path:'TDB', component:TableaubordComponent},
   {path:'tribunaux', component:TribunauxComponent},
-  {path:'encours',component:EncoursComponent},
-  {path:'avenir',component:AvenirComponent},
-  {path:'archive',component:ArchiveComponent},
+  {path:'TDB/encours',component:EncoursComponent},
+  {path:'TDB/avenir',component:AvenirComponent},
+  {path:'TDB/archive',component:ArchiveComponent},
   {path:'tache', component:TacheComponent},
   {path:'tache/ajout-tache', component:AjoutTacheComponent},
   {path:'tribunaux', component:TribunauxComponent}

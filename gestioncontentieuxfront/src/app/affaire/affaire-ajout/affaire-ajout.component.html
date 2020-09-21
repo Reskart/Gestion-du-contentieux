@@ -1,8 +1,19 @@
-  <br>
-
-  <div>
-    <a href="/affaire/accueil"><button type="button" class="btn btn-primary">Retour</button></a>
+<div class="row">
+  <div class="col-md-4">
+      <div class="img-logo" style="text-align:left;">
+          <a href=""role="button">
+              <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+              height="150px" width="150px"/>
+          </a>
+      </div>
   </div>
+  <div class="col-md-4">
+      <h1 style="text-align: center;padding-top:75px">Gestion des affaires</h1>
+  </div>
+  <div class="col-md-4" style="text-align: right;">
+    <a href="/affaire/accueil"><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+</div>
+</div>
 
 <div class="row">
   <div class="container">
@@ -48,29 +59,9 @@
               <input type="submit" class="btn btn-success"  *ngIf="!mode" value="Ajouter" (click)="addAffaire()" />
               <input type="submit" class="btn btn-success" [disabled]="!form.valid" *ngIf="mode" value="Enregistrer" (click)="updateAffaire()"/>
             </div>
-  
           </div>
-  
-  
-  
-  
-  
-  
-  
         </div>
-  
-  
-  
-  
-  
-  
       </div>
-  
-  
       </form>
-  
     </div>
-  
-  
-  
   </div>
