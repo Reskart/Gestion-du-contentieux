@@ -12,19 +12,18 @@ export class AjoutTacheComponent implements OnInit {
 
   form: FormGroup;
   mode: any;
-  activatedRoute: any;
   index: any;
   userService: any;
 
-  constructor(private tacheService: TacheService, private Router: Router) { }
+  constructor(private tacheService: TacheService, private activatedRoute: ActivatedRoute, private Router: Router) { }
 
   ngOnInit(): void {
     this.mode = this.tacheService.editMode;
     this.form = new FormGroup({
-      dateDreation : new FormControl(null),
-      titre : new FormControl(null),
-      description : new FormControl(null),
-      statutAudience : new FormControl(null)
+      dateDreation : new FormControl(null,[Validators.required]),
+      titre : new FormControl(null,[Validators.required]),
+      description : new FormControl(null,[Validators.required]),
+      statutAudience : new FormControl(null,[Validators.required])
     })
 
     this.activatedRoute.params.subscribe ((param: Params) => {
@@ -39,6 +38,7 @@ export class AjoutTacheComponent implements OnInit {
   addTache() {
     this.tacheService.add(this.form.value).subscribe(response =>{
       this.tacheService.taches.push(response.body);
+      console.log(this.tacheService.taches);
       this.form.reset();
     });
   }

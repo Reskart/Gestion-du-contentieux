@@ -22,7 +22,8 @@ const routes: Routes = [
 
   
   {path:'TDB', component:TableaubordComponent},
-  {path:'tache', component:TacheComponent, children: [{path:'ajout-tache', component:AjoutTacheComponent}]},
+  {path:'tache', component:TacheComponent},
+  {path:'tache/ajout-tache', component:AjoutTacheComponent},
   {path:'tribunaux', component:TribunauxComponent}
 
 ];
