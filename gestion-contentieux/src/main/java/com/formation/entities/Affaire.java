@@ -99,7 +99,7 @@ public class Affaire implements Serializable {
 		this.statut = statut;
 	}
 
-	@OneToMany(mappedBy="affaire",orphanRemoval = true,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="affaire", fetch = FetchType.LAZY)
 	public List<Tache> getTaches() {
 		return taches;
 	}
@@ -108,7 +108,7 @@ public class Affaire implements Serializable {
 		this.taches = taches;
 	}
 
-	@OneToMany(mappedBy="affaire",orphanRemoval = true,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="affaire", fetch = FetchType.LAZY)
 	public List<Document> getDocuments() {
 		return documents;
 	}
