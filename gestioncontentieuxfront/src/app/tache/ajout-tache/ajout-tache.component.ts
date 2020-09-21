@@ -21,7 +21,7 @@ export class AjoutTacheComponent implements OnInit {
   ngOnInit(): void {
     this.mode = this.tacheService.editMode;
     this.form = new FormGroup({
-      dateDreation : new FormControl(null),
+      dateCreation : new FormControl(null),
       titre : new FormControl(null),
       description : new FormControl(null),
       statutAudience : new FormControl(null)

@@ -24,11 +24,9 @@ export class UserListComponent implements OnInit {
   
   form: FormGroup;
   formValue:any;
-  id:any;
   name:any;
 
   user:any;
-  userS:any={make:null};
   userSS:any[]=[]
   
  
