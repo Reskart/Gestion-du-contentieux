@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AffaireService } from 'src/service/affaire.service';
 
 @Component({
   selector: 'app-affaire-accueil',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AffaireAccueilComponent implements OnInit {
 
-  constructor() { }
+  affairesList: any[] = [];
+  constructor(private affaireService : AffaireService) { }
 
   ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll() {
+
+    this.affaireService.findAll().subscribe(data => {
+      this.affairesList = data as [];
+    });
   }
 
 }

@@ -19,6 +19,7 @@ import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
+import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-r
     UserFormComponent,
     UserUpdateComponent,
     UserListComponent,
-    RoleComponent
+    RoleComponent,
+    AffaireAjoutComponent
     
   ],
   imports: [
