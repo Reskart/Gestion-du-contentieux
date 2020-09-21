@@ -1,0 +1,74 @@
+  <br>
+
+  <div>
+    <a href="/affaire/accueil"><button type="button" class="btn btn-primary">Retour</button></a>
+  </div>
+
+<div class="row">
+  <div class="container">
+    <form [formGroup]="form">
+      <div class="card">
+        <div class="card-header">Ajout d'une affaire</div>
+        <div class="card-body">
+          <div class="row">
+          <div class="form-group col-md-6">
+            <label for="reference">Référence</label>
+            <input type="text" id="reference" class="form-control" formControlName="reference" />
+            <p *ngIf="form.get('reference').invalid && form.get('reference').touched" style="color:red">La référence est obligatoire!</p>
+        </div>
+          <div class="form-group col-md-6">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre" class="form-control" formControlName="titre"/>
+            <p *ngIf="form.get('titre').invalid && form.get('titre').touched" style="color:red">Le titre est obligatoire!</p>   
+        </div>
+        </div>
+        <div class="row">
+
+          <div class="form-group col-md-6">
+            <label for="description">Description</label>
+             <input type="text" class="form-control" id="description" formControlName="description"/>
+                <p *ngIf="form.get('description').invalid && form.get('description').touched" style="color:red">La descripton est obligatoire!</p>    
+            </div>
+          <div class="form-group col-md-6">
+            <label for="statut">Statut</label>
+            <input type="number" class="form-control" id="statut" formControlName="statut" />
+            <div *ngIf="form.get('statut').invalid && form.get('statut').touched">    
+                <p *ngIf="form.get('statut').errors.min" style="color:red">Le statut doit avoir une valeur comprise entre 0 et 2.</p>
+                <p *ngIf="form.get('statut').errors.max" style="color:red">Le statut doit avoir une valeur comprise entre 0 et 2.</p>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+  
+              <input type="submit" class="btn btn-success"  *ngIf="!mode" value="Ajouter" (click)="addAffaire()" />
+              <input type="submit" class="btn btn-success" [disabled]="!form.valid" *ngIf="mode" value="Enregistrer" (click)="updateAffaire()"/>
+            </div>
+  
+          </div>
+  
+  
+  
+  
+  
+  
+  
+        </div>
+  
+  
+  
+  
+  
+  
+      </div>
+  
+  
+      </form>
+  
+    </div>
+  
+  
+  
+  </div>

@@ -1,4 +1,36 @@
 <div style="text-align: center; margin-top: 20px;">
     <a href="/affaire/recherche"><button type="button" class="btn btn-success">Rechercher une affaire</button></a>
+  </div>
+
+  <div>
+    <a href="/affaire/ajout"><button type="button" class="btn btn-primary">Ajouter une affaire</button></a>
+  </div>
+
+  <br>
+<div class="row" *ngIf="affairesList.length>0">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Liste des Affaires</div>
+      <div class="card-body">
+        <table class="table">
+          <thead class="thead-light">
+            <th>Référence</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
+          </thead>
+          <tr *ngFor="let a of affairesList">
+            <td> {{a.reference}}</td>
+            <td>{{a.titre}}</td>
+            <td>{{a.description}}</td>
+            <td>{{a.statut}}</td>
+            <td><input type="submit" value="Edit" class="btn btn-warning" (click)="edit(a.idAffaire)" /></td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+
   <router-outlet></router-outlet>
