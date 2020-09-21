@@ -22,9 +22,9 @@ export class AjoutTacheComponent implements OnInit {
     this.mode = this.tacheService.editMode;
     this.form = new FormGroup({
       dateDreation : new FormControl(null),
-      titre : new FormControl(null,[Validators.required]),
-      description : new FormControl(null,[Validators.required]),
-      statutAudience : new FormControl(null,[Validators.required])
+      titre : new FormControl(null),
+      description : new FormControl(null),
+      statutAudience : new FormControl(null)
     })
 
     this.activatedRoute.params.subscribe ((param: Params) => {
