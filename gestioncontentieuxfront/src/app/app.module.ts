@@ -19,6 +19,7 @@ import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
+import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
 import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
@@ -40,6 +41,7 @@ import { ArchiveComponent } from './tableaubord/archive/archive.component';
     UserUpdateComponent,
     UserListComponent,
     RoleComponent,
+    AffaireAjoutComponent,
     EncoursComponent,
     AvenirComponent,
     ArchiveComponent

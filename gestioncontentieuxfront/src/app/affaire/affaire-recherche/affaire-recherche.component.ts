@@ -37,9 +37,6 @@ export class AffaireRechercheComponent implements OnInit {
     );
 
     this.affichage=true;
-    console.log(this.affichage);
-
-
 
   }
 
