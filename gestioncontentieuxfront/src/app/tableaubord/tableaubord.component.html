@@ -1,22 +1,28 @@
-Affaire en cours : <input type="checkbox" ng-model="En cours" ng-init="myVar = false">
-<div *ngFor="let a of affaires">
-
-    <tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
-     text-align:center;">
-        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.reference}}</td>
-        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.titre}}</td>
-        <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.description}}</td>
-        <td *ngIf="1" style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.statut}}</td>
-    </tr>
-</div>
+<h2>Tableau de bord</h2>
 
 <div>
-    <form [formGroup]="form">
-        <input type="submit" class="form-control" placeholder="Statut" formControlName="statut">
-    </form>
-        <button type="submit" class="btn btn-primary" (click)="findaffairebystatut()">Rechercher</button>
-            <tr *ngFor="let as of affaires">
-             <td>{{as.reference}}</td>
+<form [formGroup]="form">
 
-            </tr>
+    <a class="btn btn-link btn-lg" role="button" href="/encours">Affaires en cours</a>
+    <a class="btn btn-link btn-lg" role="button" href="/avenir">Affaires à venir</a>
+    <a class="btn btn-link btn-lg" role="button" href="/archive">Affaires archivées</a>
+</form>
 </div>
+
+<br>
+          <div style="margin-right: 20%;margin-left:26%">
+            <tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
+                text-align:center;font-weight:bold;font-size:large">
+                <td style="border: solid 1px; border-color:white;padding-top:5px;padding-bottom:5px;width:200px;">Reference</td>
+                <td style="border: solid 1px; border-color:white;padding:20px;width:200px;">Titre</td>
+                <td style="border: solid 1px; border-color:white;padding:20px;width:200px;">Description</td>
+            </tr>
+            <div *ngFor="let a of affaires">
+            <tr class="table-secondary" style="border: solid 2px; border-radius:5px;border-color: white;
+             text-align:center;">
+                <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.reference}}</td>
+                <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.titre}}</td>
+                <td style="border: solid 1px; border-color:white;padding:20px;width:200px;top:50%">{{a.description}}</td>
+            </tr>
+            </div>
+            </div>

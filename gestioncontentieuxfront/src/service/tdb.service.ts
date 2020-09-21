@@ -9,7 +9,6 @@ export class TDBService {
 
   URL = 'http://localhost:8080/apiAffaire'
 affaires: any[]=[];
-statut:any;
 
   constructor(private http:HttpClient) { }
   findAll() {
@@ -20,4 +19,6 @@ statut:any;
 
     return this.http.get<any>(this.URL+'/affaireStatut/'+statut);
 }
+
+
 }

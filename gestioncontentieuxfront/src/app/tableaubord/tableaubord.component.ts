@@ -14,23 +14,11 @@ export class TableaubordComponent implements OnInit {
   affaires:any[]=[];
   form: FormGroup;
   formValue:any;
-  statut:any;
+ 
+
   ngOnInit(): void {
-    const myVar = false;
 
     this.tdbservice.findAll().subscribe(data =>{
-      this.affaires = data as []; });
-  }
-  findaffairebystatut(){
-    this.formValue=this.form.value;
-    this.statut=this.formValue['statut'];
-
-
-
-
-    this.tdbservice.getStatut(this.statut).subscribe(data=>{
-      this.statut=data;    });
-
-      this.affaires=JSON.parse(JSON.stringify(this.statut));
+    this.affaires = data as []; });
   }
 }
