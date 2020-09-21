@@ -1,8 +1,21 @@
+<table>
+    <tr>
+        <td class="img-logo" style="text-align:left;">
+            <a href=""role="button">
+                <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+                height="150px" width="150px"/>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<div style="text-align: center;">
+    <h1>Ajout d'une tâche</h1>
+</div>
 <div class="row">
     <div class="container">
         <form [formGroup]="form">  
             <fieldset fieldset class="form-group">
-                <legend >Ajout d'une tâche</legend>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="dateDreation">Date de création</label>
@@ -24,7 +37,7 @@
                     <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience">
                 </div>
 
-                <button href ="/tache/ajout" type="submit" class="btn btn-primary">Ajouter</button>
+                <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="!form.valid" (click)="addTache()">
             </fieldset>
         </form>
     </div>

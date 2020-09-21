@@ -20,6 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
 import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
+import { EncoursComponent } from './tableaubord/encours/encours.component';
+import { AvenirComponent } from './tableaubord/avenir/avenir.component';
+import { ArchiveComponent } from './tableaubord/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.com
     UserUpdateComponent,
     UserListComponent,
     RoleComponent,
-    AffaireAjoutComponent
+    AffaireAjoutComponent,
+    EncoursComponent,
+    AvenirComponent,
+    ArchiveComponent
     
   ],
   imports: [
