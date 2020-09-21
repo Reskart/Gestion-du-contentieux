@@ -9,7 +9,6 @@ import { TDBService } from 'src/service/tdb.service';
 export class EncoursComponent implements OnInit {
 
   constructor(private tdbservice : TDBService) { }
-  Affaire: any={make:null};
   affaires:any[]=[];
   ngOnInit(): void {
       this.tdbservice.getStatut(0).subscribe(data => {
