@@ -1,1 +1,14 @@
 <p>user-form works!</p>
+
+<div>
+<form [formGroup]="form">
+
+    <input type="text" placeholder="Nom" formControlName="nomUtilisateur"/>
+    <input type="text" placeholder="Prénom" formControlName="prenomUtilisateur"/>
+    <input type="text" placeholder="email" formControlName="email"/>
+    <input type ="submit" value="valider" (click)="addUser"/>
+
+</form>
+
+
+</div>

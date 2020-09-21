@@ -10,6 +10,7 @@ export class UserService {
   URL = 'http://localhost:8080/apiUtilisateur';
 
   utilisateurs: any []=[];
+  utilisateur:any;
 
   constructor(private http:HttpClient) { }
 
@@ -23,5 +24,8 @@ export class UserService {
   }
   findAll() {
     return this.http.get<any[]>(this.URL+'/utilisateurs').pipe(map(value =>this.utilisateurs=value))
+  }
+  add(user){
+    return this.http.post(this.URL+'/add',user,{observe:'response'});
   }
 }
