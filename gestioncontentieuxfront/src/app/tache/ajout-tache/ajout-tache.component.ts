@@ -21,20 +21,20 @@ export class AjoutTacheComponent implements OnInit {
   ngOnInit(): void {
     this.mode = this.tacheService.editMode;
     this.form = new FormGroup({
-      dateDreation : new FormControl(null),
+      dateCreation : new FormControl(null),
       titre : new FormControl(null),
       description : new FormControl(null),
       statutAudience : new FormControl(null)
     })
 
-    this.activatedRoute.params.subscribe ((param: Params) => {
-      this.index = param['index'];
+    // this.activatedRoute.params.subscribe ((param: Params) => {
+    //   this.index = param['index'];
 
-      if(this.index) {
-        this.tacheService.getOne(this.index).subscribe((response:any) =>
-        this.form.setValue(response));
-      }
-    }) 
+    //   if(this.index) {
+    //     this.tacheService.getOne(this.index).subscribe((response:any) =>
+    //     this.form.setValue(response));
+    //   }
+    // }) 
   }
 
   addTache() {

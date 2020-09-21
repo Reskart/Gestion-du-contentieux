@@ -18,23 +18,23 @@
             <fieldset fieldset class="form-group">
 
                 <div class="form-group">
-                    <label class="col-form-label col-form-label-lg" for="dateDreation">Date de création</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="01/01/2001" id="dateDreation">
+                    <label class="col-form-label col-form-label-lg" for="dateCreation">Date de création</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="01/01/2001" id="dateCreation" formControlName="dateCreation">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="titre">Titre</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Titre" id="titre">
+                    <input class="form-control form-control-lg" type="text" placeholder="Titre" id="titre" formControlName="titre">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="description">Description</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Description" id="description">
+                    <input class="form-control form-control-lg" type="text" placeholder="Description" id="description" formControlName="description">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="statutAudience">Statut audience</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience">
+                    <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience" formControlName="statutAudience">
                 </div>
 
                 <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="!form.valid" (click)="addTache()">
