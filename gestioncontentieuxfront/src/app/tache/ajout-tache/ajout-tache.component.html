@@ -1,30 +1,46 @@
 <div class="row">
+    <div class="col-md-4">
+        <div class="img-logo" style="text-align:left;">
+            <a href=""role="button">
+                <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+                height="150px" width="150px"/>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h1 style="text-align: center;padding-top:75px">Ajout d'une tâche</h1>
+    </div>
+    <div class="col-md-4" style="text-align: right;">
+        <a href="/tache"><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+    </div>
+</div>
+
+<div class="row">
     <div class="container">
         <form [formGroup]="form">  
             <fieldset fieldset class="form-group">
-                <legend >Ajout d'une tâche</legend>
 
                 <div class="form-group">
-                    <label class="col-form-label col-form-label-lg" for="dateDreation">Date de création</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="01/01/2001" id="dateDreation">
+                    <label class="col-form-label col-form-label-lg" for="dateCreation">Date de création</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="01/01/2001" id="dateCreation" formControlName="dateCreation">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="titre">Titre</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Titre" id="titre">
+                    <input class="form-control form-control-lg" type="text" placeholder="Titre" id="titre" formControlName="titre">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="description">Description</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Description" id="description">
+                    <input class="form-control form-control-lg" type="text" placeholder="Description" id="description" formControlName="description">
                 </div>
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="statutAudience">Statut audience</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience">
+                    <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience" formControlName="statutAudience">
                 </div>
 
-                <button href ="/tache/ajout" type="submit" class="btn btn-primary">Ajouter</button>
+                <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="!form.valid" (click)="addTache()">
             </fieldset>
         </form>
     </div>

@@ -1,5 +1,50 @@
-<div>
-    <a href="/affaire/recherche"><button type="button" class="btn btn-success">Rechercher une affaire</button></a>
+<div class="row">
+  <div class="col-md-4">
+      <div class="img-logo" style="text-align:left;">
+          <a href=""role="button">
+              <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+              height="150px" width="150px"/>
+          </a>
+      </div>
   </div>
+  <div class="col-md-4">
+      <h1 style="text-align: center;padding-top:75px">Gestion des affaires</h1>
+  </div>
+  <div class="col-md-4" style="text-align: right;">
+    <a href=""><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+  <a type="button" href="/affaire/recherche" class="btn btn-primary btn-lg btn-success" style="margin-right: 50px;">Rechercher une affaire</a>
+  <a type="button" href="/affaire/ajout" class="btn btn-primary btn-lg btn-success">Ajouter une affaire</a>
+</div>
+
+<br>
+<div class="row" *ngIf="affairesList.length>0">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Liste des Affaires</div>
+      <div class="card-body">
+        <table class="table">
+          <thead class="thead-light">
+            <th>Référence</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
+          </thead>
+          <tr *ngFor="let a of affairesList">
+            <td> {{a.reference}}</td>
+            <td>{{a.titre}}</td>
+            <td>{{a.description}}</td>
+            <td>{{a.statut}}</td>
+            <td><input type="submit" value="Edit" class="btn btn-warning" (click)="edit(a.idAffaire)" /></td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
   <router-outlet></router-outlet>
