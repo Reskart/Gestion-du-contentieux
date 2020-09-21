@@ -53,7 +53,7 @@ public class AffaireWebservice {
 		
 	}
 	@RequestMapping(value="affaireStatut/{statut}", method=RequestMethod.GET)
-	public Affaire getByStat(@PathVariable int statut) {
+	public List<Affaire> getByStat(@PathVariable int statut) {
 		return service.findByStatut(statut);
 		
 	}
