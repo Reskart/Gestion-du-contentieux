@@ -24,6 +24,7 @@ import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

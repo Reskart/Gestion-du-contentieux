@@ -30,4 +30,9 @@ export class AffaireAccueilComponent implements OnInit {
 
   }
 
+  ajoutDoc(idAffaire){
+
+    this.router.navigate(['/document', idAffaire]);
+  }
+
 }
