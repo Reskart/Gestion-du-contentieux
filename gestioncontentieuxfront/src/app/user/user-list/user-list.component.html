@@ -4,7 +4,7 @@
     
     <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="name">
 </form>
-    <button type="submit" class="btn btn-primary" (click)="finduserName()">Rechercher</button>
+    <input type="submit" class="btn btn-primary" (click)="finduserName()" >Rechercher</button>
     <tr *ngFor="let ut of userSS">
         <td>{{ut.email}}</td>
 

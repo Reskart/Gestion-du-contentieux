@@ -29,7 +29,7 @@ export class UserListComponent implements OnInit {
 
   user:any;
   userS:any={make:null};
-  userSS:any[]=[]
+  userSS:any[]=[];
   
  
 
@@ -66,10 +66,12 @@ export class UserListComponent implements OnInit {
     this.userservice.getName(this.name).subscribe(data=>{
       this.user=data;    });
 
-      this.userSS=JSON.parse(JSON.stringify(this.user));
+      this.userSS=(this.user);
+
       
 
       // this.userS = JSON.stringify(this.user);
   }
+
 
 }
