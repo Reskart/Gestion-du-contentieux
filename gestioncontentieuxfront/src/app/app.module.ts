@@ -19,20 +19,21 @@ import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
-<<<<<<< HEAD
-import { CalendrierComponent } from './tache/calendrier/calendrier.component';
 
+import { CalendrierComponent } from './tache/calendrier/calendrier.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-=======
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
 import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
->>>>>>> master
+
 
 @NgModule({
   declarations: [
@@ -51,15 +52,12 @@ import { ArchiveComponent } from './tableaubord/archive/archive.component';
     UserUpdateComponent,
     UserListComponent,
     RoleComponent,
-<<<<<<< HEAD
     CalendrierComponent,
-=======
     AffaireAjoutComponent,
     EncoursComponent,
     AvenirComponent,
     ArchiveComponent
->>>>>>> master
-    
+  
   ],
   imports: [
     BrowserModule,
@@ -71,6 +69,7 @@ import { ArchiveComponent } from './tableaubord/archive/archive.component';
     CommonModule,
     FormsModule,
     NgbModalModule,
+    BrowserAnimationsModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -84,3 +83,13 @@ import { ArchiveComponent } from './tableaubord/archive/archive.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
+  // Ensure Angular destroys itself on hot reloads.
+  if (window['ngRef']) {
+    window['ngRef'].destroy();
+  }
+  window['ngRef'] = ref;
+
+  // Otherwise, log the boot error
+}).catch(err => console.error(err));

@@ -11,14 +11,11 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserComponent } from './user/user.component';
 import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
-<<<<<<< HEAD
 import { CalendrierComponent } from './tache/calendrier/calendrier.component';
-=======
 import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
 import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
->>>>>>> master
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
@@ -38,7 +35,8 @@ const routes: Routes = [
   {path:'TDB/archive',component:ArchiveComponent},
   {path:'tache', component:TacheComponent},
   {path:'tache/ajout-tache', component:AjoutTacheComponent},
-  {path:'tribunaux', component:TribunauxComponent}
+  {path:'tribunaux', component:TribunauxComponent},
+  {path:'tache/calendrier', component:CalendrierComponent}
 
 ];
 

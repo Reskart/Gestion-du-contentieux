@@ -51,10 +51,7 @@ const colors: any = {
   styleUrls: ['./calendrier.component.css']
 })
 
-export class CalendrierComponent implements OnInit {
-
-  ngOnInit(): void {
-  }
+export class CalendrierComponent{
 
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
@@ -93,7 +90,7 @@ export class CalendrierComponent implements OnInit {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'événement de 3 jours',
       color: colors.red,
       actions: this.actions,
       allDay: true,
@@ -105,21 +102,21 @@ export class CalendrierComponent implements OnInit {
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'événement sans date de fin',
       color: colors.yellow,
       actions: this.actions,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: 'événement qui dure 2 mois',
       color: colors.blue,
       allDay: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
+      title: 'événement modifiable',
       color: colors.yellow,
       actions: this.actions,
       resizable: {
@@ -175,7 +172,7 @@ export class CalendrierComponent implements OnInit {
     this.events = [
       ...this.events,
       {
-        title: 'New event',
+        title: 'Nouvel événement',
         start: startOfDay(new Date()),
         end: endOfDay(new Date()),
         color: colors.red,
