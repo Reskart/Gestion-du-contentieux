@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="dateCreation">Date de création</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="01/01/2001" id="dateCreation" formControlName="dateCreation">
+                    <input class="form-control form-control-lg" type="date" placeholder="01/01/2020" id="dateCreation" formControlName="dateCreation">
                 </div>
 
                 <div class="form-group">
@@ -37,7 +37,7 @@
 
                 <div class="form-group">
                     <label class="col-form-label col-form-label-lg" for="statutAudience">Statut audience</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Statut audience" id="statutAudience" formControlName="statutAudience">
+                    <input class="form-control form-control-lg" type="boolean" placeholder="true or false" id="statutAudience" formControlName="statutAudience">
                 </div>
 
                 <input type="submit" class="btn btn-primary" value="Ajouter" [disabled]="!form.valid" (click)="addTache()">
