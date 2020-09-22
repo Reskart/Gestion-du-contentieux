@@ -52,6 +52,9 @@
  }
  
  html {
+   min-height: 100%;
+   height: auto;
+   margin: 0;
    font-family: sans-serif;
    line-height: 1.15;
    -webkit-text-size-adjust: 100%;
@@ -63,6 +66,9 @@
  }
  
  body {
+   min-height: 100%;
+   height: auto;
+   margin: 0;
    margin: 0;
    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    font-size: 1rem;
@@ -70,7 +76,7 @@
    line-height: 1.5;
    color: #ebebeb;
    text-align: left;
-   background-color: #A0C0A1;
+   background: linear-gradient(#f06d06, #f0c506);
  }
  
  [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2799,6 +2805,7 @@
    color: #fff;
    background-color: #4e5d6c;
    border-color: #4e5d6c;
+   border-radius: 15px;
  }
  
  .btn-secondary:hover {
