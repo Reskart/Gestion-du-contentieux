@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AffaireService } from 'src/service/affaire.service';
+import { DocumentService } from 'src/service/document.service';
 
 @Component({
   selector: 'app-document',
@@ -9,8 +12,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class DocumentComponent implements OnInit {
 
   form : FormGroup;
+  idAffaire : any;
+  affaire : any;
 
-  constructor() { }
+  constructor(private affaireService: AffaireService, private documentService: DocumentService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,4 +26,16 @@ export class DocumentComponent implements OnInit {
     );
   }
 
-}
+  addDocument() {
+    
+    this.activatedRoute.params.subscribe((param: Params) => {
+      this.idAffaire = param['id'];
+    });
+
+    this.affaireService.getOne(this.idAffaire).subscribe((data: any) => {
+      this.affaire = data;
+
+    })
+  }
+  
+  }

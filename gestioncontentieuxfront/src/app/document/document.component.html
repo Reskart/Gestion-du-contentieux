@@ -21,16 +21,17 @@
         <div class="card">
           <div class="card-header">Ajout d'un document</div>
             <div class="card-body">
+                <div class="table">
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="col-md-8" style="margin: auto" >
                         <label for="dateCreation">Date de création</label>
-                        <input type="text" id="dateCreation" class="form-control" formControlName="dateCreation" />
+                        <input type="date" id="dateCreation" class="form-control" formControlName="dateCreation" />
                         <p *ngIf="form.get('dateCreation').invalid && form.get('dateCreation').touched" style="color:red">La date de création est obligatoire!</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="col-md-8" style="margin: auto">
                         <label for="nom">Nom</label>
                         <input type="text" id="nom" class="form-control" formControlName="nom"/>
                         <p *ngIf="form.get('nom').invalid && form.get('nom').touched" style="color:red">Le nom est obligatoire!</p>   
@@ -38,18 +39,20 @@
                 </div>
         
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="col-md-8" style="margin: auto">
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" formControlName="description"/>
                         <p *ngIf="form.get('description').invalid && form.get('description').touched" style="color:red">La descripton est obligatoire!</p>    
                     </div>
                  </div>
-  
+                 
+                <br/>
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="col-md-8" style="margin: auto; text-align: center;">
                         <input type="submit" class="btn btn-success" [disabled]="!form.valid"  value="Ajouter"  />
                      </div>
                 </div>
+            </div>
             </div>
         </div>
         </form>
