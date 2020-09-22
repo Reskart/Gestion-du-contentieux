@@ -15,6 +15,7 @@ export class AffaireAjoutComponent implements OnInit {
   affaire: any;
   idAffaire: any;
   mode: boolean;
+  affaireUp: any;
 
   constructor(private affaireService: AffaireService, private router : Router, private activatedRoute: ActivatedRoute) { }
 
@@ -24,7 +25,7 @@ export class AffaireAjoutComponent implements OnInit {
       reference : new FormControl(null, Validators.required),
       titre : new FormControl(null, Validators.required),
       description : new FormControl(null, Validators.required),
-      statut : new FormControl(null, [Validators.min(0), Validators.max(2)])
+      statut : new FormControl(null, [Validators.min(0), Validators.max(2), Validators.required])
 
     });
 
@@ -52,14 +53,23 @@ export class AffaireAjoutComponent implements OnInit {
   }
 
   updateAffaire() {
-    this.affaireService.updateAffaire(this.form.value).subscribe((response:any) => {
 
-      this.affaire = this.affaireService.affaires.find(this.findIndexToUpdate, response.body.idAffaire);
-      const index = this.affaireService.affaires.indexOf(this.affaire);
-      this.affaireService.affaires.splice(index,1,response.body);
-      this.router.navigate(['/affaire/ajout']);
-      this.affaireService.editMode = false;
-    })
+    this.activatedRoute.params.subscribe((param: Params) => {
+
+      this.idAffaire = param['id'];
+      this.affaireUp = this.form.value;
+      this.affaireUp.idAffaire = this.idAffaire;
+
+      this.affaireService.updateAffaire(this.affaireUp).subscribe((response: any) => {
+        this.affaire = this.affaireService.affaires.find(this.findIndexToUpdate, response.body.idAffaire);
+        const index = this.affaireService.affaires.indexOf(this.affaire);
+        this.affaireService.affaires.splice(index,1,response.body);
+        this.router.navigate(['/affaire/ajout']);
+        this.affaireService.editMode = false;
+      })
+     
+    }); 
+
   }
 
   findIndexToUpdate(item) {

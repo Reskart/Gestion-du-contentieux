@@ -19,7 +19,8 @@
   <div class="container">
     <form [formGroup]="form">
       <div class="card">
-        <div class="card-header">Ajout d'une affaire</div>
+        <div class="card-header" *ngIf="!mode">Ajout d'une affaire</div>
+        <div class="card-header" *ngIf="mode">Modification d'une affaire</div> 
         <div class="card-body">
           <div class="row">
           <div class="form-group col-md-6">
@@ -43,10 +44,11 @@
           <div class="form-group col-md-6">
             <label for="statut">Statut</label>
             <input type="number" class="form-control" id="statut" formControlName="statut" />
-            <div *ngIf="form.get('statut').invalid && form.get('statut').touched">    
+            <div *ngIf="form.get('statut').invalid && form.get('statut').touched" style="color:red">
+              Le statut est obligatoire!
                 <p *ngIf="form.get('statut').errors.min" style="color:red">Le statut doit avoir une valeur comprise entre 0 et 2.</p>
                 <p *ngIf="form.get('statut').errors.max" style="color:red">Le statut doit avoir une valeur comprise entre 0 et 2.</p>
-            </div>
+           </div>
         </div>
 
         </div>
