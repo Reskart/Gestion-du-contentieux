@@ -41,4 +41,10 @@ public class AffaireService implements IAffaireService {
 		return repo.findByReference(ref);
 	}
 
+	@Override
+	public List<Affaire> findByStatut(int statut) {
+		// TODO Auto-generated method stub
+		return repo.findByStatut(statut);
+	}
+
 }

@@ -11,5 +11,6 @@ public interface IAffaireService {
 	public List<Affaire> getAll();
 	public void delete(Long id);
 	public Affaire findByRef(String ref);
+	public List<Affaire> findByStatut(int statut);
 
 }

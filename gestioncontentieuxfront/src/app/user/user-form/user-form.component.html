@@ -1,1 +1,29 @@
 <p>user-form works!</p>
+
+<div>
+<form [formGroup]="form">
+
+    <input type="text" placeholder="Nom" formControlName="nomUtilisateur"/>
+    <input type="text" placeholder="Prénom" formControlName="prenomUtilisateur"/>
+    <input type="text" placeholder="email" formControlName="email"/><br/>
+
+    <div class="form-check"  *ngFor="let r of roles, let i=index">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" value="{{i}}" id="role{{i}}">
+          {{roles[i].libelle}}
+        </label><br/>
+    </div><br/>
+
+  
+ 
+    <input type ="submit" value="valider" (click)="addUser()"/>
+
+
+
+
+</form>
+
+
+
+
+</div>

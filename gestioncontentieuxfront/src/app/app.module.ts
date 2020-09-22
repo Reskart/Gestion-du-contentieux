@@ -17,7 +17,12 @@ import { UserUpdateComponent } from './user/user-list/user-update/user-update.co
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RoleComponent } from './role/role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AjoutTacheComponent } from './tache/ajout-tache/ajout-tache.component';
 import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-recherche.component';
+import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.component';
+import { EncoursComponent } from './tableaubord/encours/encours.component';
+import { AvenirComponent } from './tableaubord/avenir/avenir.component';
+import { ArchiveComponent } from './tableaubord/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +33,18 @@ import { AffaireRechercheComponent } from './affaire/affaire-recherche/affaire-r
     TribunauxComponent,
     TableaubordComponent,
     AccueilComponent,
+    AjoutTacheComponent,
     DocumentComponent,
     AffaireRechercheComponent,
     AffaireAccueilComponent,
     UserFormComponent,
     UserUpdateComponent,
     UserListComponent,
-    RoleComponent
+    RoleComponent,
+    AffaireAjoutComponent,
+    EncoursComponent,
+    AvenirComponent,
+    ArchiveComponent
     
   ],
   imports: [
