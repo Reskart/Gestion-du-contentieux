@@ -16,6 +16,7 @@ import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.com
 import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
+import { DocumentComponent} from './document/document.component';
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
     {path: 'ajout', component: AffaireAjoutComponent},
     {path: 'edit/:id', component: AffaireAjoutComponent}
   ]},
+  {path: 'document/:id', component: DocumentComponent},
 
   
   {path:'TDB', component:TableaubordComponent},
