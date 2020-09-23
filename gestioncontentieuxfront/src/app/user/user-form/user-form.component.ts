@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder, AbstractControl } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RoleService } from 'src/service/role.service';
@@ -17,6 +17,10 @@ export class UserFormComponent implements OnInit {
   form:FormGroup;
   roles:any[]=[];
   rolesToAdd:any[]=[];
+  marked = false;
+  theCheckbox = false;
+  index:any;
+
 
 
   ngOnInit(): void {
@@ -30,26 +34,39 @@ export class UserFormComponent implements OnInit {
       email : new FormControl(null,Validators.required),
       nomUtilisateur : new FormControl(null, Validators.required),
       prenomUtilisateur: new FormControl(null, Validators.required),
-      role0:new FormControl(null, Validators.required),
-      role1:new FormControl(null, Validators.required),
-      role2:new FormControl(null, Validators.required),
-      role3:new FormControl(null, Validators.required),
-      role4:new FormControl(null, Validators.required)
+      // role0:new FormControl(null, Validators.required),
+      // role1:new FormControl(null, Validators.required),
+      // role2:new FormControl(null, Validators.required),
+      // role3:new FormControl(null, Validators.required),
+      // role4:new FormControl(null, Validators.required),
+      theCheckbox: new FormControl(null, Validators.required)
+
 
     })
+    this.addRoles();
 
 
   }
 
-  addUser(){
+  toggleVisibility(e){
+    this.marked= e.target.checked;
+  }
 
-    for(let i=0;i<this.rolesToAdd.length;i++){
-      if(document.getElementById("role"+i)){
-        
-      }
+  addRoles(){
+    for(let k=0;k<=this.roles.length;k++){
+      this.form.addControl("role"+k, new FormControl('', Validators.required));
     }
+  }
 
-    
+  addRole(r){
+    this.marked=r.target.checked;
+  }
+
+
+  
+
+  addUser(){
+   
 
     this.userservice.add(this.form.value).subscribe(response=>
       this.userservice.utilisateurs.push(response.body));

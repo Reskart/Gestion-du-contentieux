@@ -14,6 +14,7 @@ export class DocumentComponent implements OnInit {
   form : FormGroup;
   idAffaire : any;
   affaire : any;
+  document : any;
 
   constructor(private affaireService: AffaireService, private documentService: DocumentService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -30,12 +31,33 @@ export class DocumentComponent implements OnInit {
     
     this.activatedRoute.params.subscribe((param: Params) => {
       this.idAffaire = param['id'];
+
+      this.affaireService.getOne(this.idAffaire).subscribe((data: any) => {
+        this.affaire = data;
+  
+        this.document = this.form.value;
+        this.document.affaire = this.affaire;
+        
+        this.documentService.addDocument(this.document).subscribe(response => {
+          this.documentService.documents.push(response.body);
+          this.form.reset();
+      });
+
+      
     });
 
-    this.affaireService.getOne(this.idAffaire).subscribe((data: any) => {
-      this.affaire = data;
+    
 
-    })
+    
+
+
+    });
+
+    
+
+    
+
+
   }
   
   }

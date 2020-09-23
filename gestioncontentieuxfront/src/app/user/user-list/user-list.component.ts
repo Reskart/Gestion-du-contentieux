@@ -27,8 +27,7 @@ export class UserListComponent implements OnInit {
   name:any;
 
   user:any;
-  userS:any={make:null};
-  userSS:any[]=[];
+  userSS:any[]=[]
   
  
 

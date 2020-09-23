@@ -49,7 +49,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-md-8" style="margin: auto; text-align: center;">
-                        <input type="submit" class="btn btn-success" [disabled]="!form.valid"  value="Ajouter"  />
+                        <input type="submit" class="btn btn-success" [disabled]="!form.valid"  value="Ajouter" (click)=addDocument() />
                      </div>
                 </div>
             </div>

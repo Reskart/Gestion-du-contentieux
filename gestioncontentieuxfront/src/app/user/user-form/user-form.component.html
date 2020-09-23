@@ -9,12 +9,41 @@
 
     <div class="form-check"  *ngFor="let r of roles, let i=index">
         <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" value="{{i}}" id="role{{i}}">
+          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" value="{{i}}" id="role{{i}}"/>
           {{roles[i].libelle}}
         </label><br/>
     </div><br/>
 
-  
+    <!-- <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" formControlName="role0" value="0" data-md-icheck (change)="addRole($event)" >
+        {{roles[0].libelle}} <br/>
+      </label><br/>
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" formControlName="role1" value=1>
+        {{roles[1].libelle}}
+      </label><br/>
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" formControlName="role2" value=2>
+        {{roles[2].libelle}}
+      </label><br/>
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" formControlName="role3" value=3>
+        {{roles[3].libelle}}
+      </label><br/>
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" formControlName="role4" value=4>
+        {{roles[4].libelle}}
+      </label><br/>
+
+      <input type="checkbox" formControlName="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+      Checkbox is <span *ngIf="marked">checked</span><span *ngIf="!marked">unchecked</span>
+
+    </div> -->
  
     <input type ="submit" value="valider" (click)="addUser()"/>
 
