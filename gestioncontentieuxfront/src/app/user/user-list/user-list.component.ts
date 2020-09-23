@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/service/user.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ngModuleJitUrl } from '@angular/compiler';
-import { element } from 'protractor';
-import { FormControl, FormGroup , Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup , Validators} from '@angular/forms';
 
 
 @Component({
@@ -19,15 +17,10 @@ export class UserListComponent implements OnInit {
 
   
   utilisateurs:any[]=[];
-
-
-  
   form: FormGroup;
   formValue:any;
   name:any;
-
-  user:any;
-  userSS:any[]=[]
+  userSS:any[]=[];
   
  
 
@@ -57,18 +50,8 @@ export class UserListComponent implements OnInit {
   finduserName(){
     this.formValue=this.form.value;
     this.name=this.formValue['name'];
-
-
-
-
     this.userservice.getName(this.name).subscribe(data=>{
-      this.user=data;    });
-
-      this.userSS=this.user;
-      
-
-      // this.userS = JSON.stringify(this.user);
+      this.userSS=data;});
   }
-
 
 }
