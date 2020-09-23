@@ -21,8 +21,6 @@ export class UserFormComponent implements OnInit {
   theCheckbox = false;
   index:any;
 
-
-
   ngOnInit(): void {
 
     this.roleservice.findAll().subscribe(data=>{
@@ -40,12 +38,8 @@ export class UserFormComponent implements OnInit {
       // role3:new FormControl(null, Validators.required),
       // role4:new FormControl(null, Validators.required),
       theCheckbox: new FormControl(null, Validators.required)
-
-
     })
     this.addRoles();
-
-
   }
 
   toggleVisibility(e){
@@ -62,14 +56,11 @@ export class UserFormComponent implements OnInit {
     this.marked=r.target.checked;
   }
 
-
-  
-
   addUser(){
-   
-
     this.userservice.add(this.form.value).subscribe(response=>
       this.userservice.utilisateurs.push(response.body));
+      this.form.reset;
   }
+  
 
 }

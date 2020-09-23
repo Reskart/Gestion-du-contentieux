@@ -1,28 +1,47 @@
-<div><form [formGroup]="form">
-    
-    <input type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="name" id="name"/>
+<div class="row">
+    <div class="container">
+        <form [formGroup]="form">  
+            <fieldset fieldset class="form-group">
+                
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg" for="dateCreation">Nom de l'utilisateur</label>
+                    <input class="form-control form-control-lg" type="text" class="form-control" placeholder="Nom de l'utilisateur" formControlName="name" id="name"/>
+                </div>
 
-    <input type="submit" value="Rechercher" (click)="finduserName()" />
-</form>
-    <tr *ngFor="let ut of userSS">
-        <td>{{ut.email}}</td>
-
-    </tr>
-    <!-- {{userS}}<br/> -->
-
-
-
-    
+                <input class="btn btn-primary" type="submit" value="Rechercher" (click)="finduserName()" />
+            </fieldset>
+        </form>
+        <div class="row">
+            <div class="container">
+              <div class="card">
+                <div class="card-body">
+                  <table class="table">
+                    <tr *ngFor="let ut of userSS">
+                        <td>{{ut.email}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- {{userS}}<br/> -->
+    </div>    
 </div>
+<br>
+<div class="row">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <table class="table">
+            <tr *ngFor="let u of utilisateurs">
+                <td>{{u.idUtilisateur}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.nomUtilisateur}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div>
-
-    <tr *ngFor="let u of utilisateurs">
-        <td>{{u.idUtilisateur}}</td>
-        <td>{{u.email}}</td>
-        <td>{{u.nomUtilisateur}}</td>
-    </tr>
-
-
-
-</div>
