@@ -1,6 +1,28 @@
+
+<p>user-form works!</p>
+
+<!-- <div>
+<form [formGroup]="form">
+
+    <input type="text" placeholder="Nom" formControlName="nomUtilisateur"/>
+    <input type="text" placeholder="Prénom" formControlName="prenomUtilisateur"/>
+    <input type="text" placeholder="email" formControlName="email"/><br/>
+
+    <div class="form-check"   *ngFor="let r of roles, let i=index">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" (change)="toggleVisibility($event)" value="{{roles[i]}}"/>
+          {{roles[i].libelle}}
+        </label><br/>
+    </div><br/>
+    </form> -->
+
+    <!-- <select multiple="" class="form-control" id="exampleSelect2">
+      <option *ngFor="let r of roles, let i=index" formControlName="role{{i}}">{{roles[i].libelle}}</option>
+    </select> -->
+
 <div class="row">
   <div class="container">
-    <form [formGroup]="form">
+    <form *ngIf="form"  [formGroup]="form" >
       <fieldset fieldset class="form-group">
 
         <div class="form-group">
@@ -18,15 +40,16 @@
         </div>
         
         <router-outlet></router-outlet>
-        <div class="form-group" formArrayName="roles">
+        <div class="form-group" >
           <label class="col-form-label col-form-label-lg" for="roles">Roles :</label>
           <div class="form-check"  *ngFor="let r of roles, let i=index">
             <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" [checked]="unchecked" (change)="unCheckAll()" formControlName="role{{i}}" value="{{i}}" id="role{{i}}"/>
+            <input class="form-check-input" type="checkbox" [checked]="unchecked"  formControlName="role{{i}}" value="{{roles[i]}}" id="role{{i}}"/>
             {{roles[i].libelle}}
             </label>
           </div>
         </div>
+
 
     <!-- <div class="form-check">
       <label class="form-check-label">
