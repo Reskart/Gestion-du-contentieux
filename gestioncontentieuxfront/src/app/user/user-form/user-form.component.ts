@@ -42,9 +42,9 @@ export class UserFormComponent implements OnInit {
 
     this.addRoles()
 
-      theCheckbox: new FormControl(null, Validators.required)
+
     })
-    this.addRoles();
+    
 
   }
 
