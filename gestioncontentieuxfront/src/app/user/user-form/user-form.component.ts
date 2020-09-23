@@ -20,13 +20,12 @@ export class UserFormComponent implements OnInit {
   marked = false;
   theCheckbox = false;
   index:any;
-  listRoles:FormArray;
 
   ngOnInit(): void {
 
     this.roleservice.findAll().subscribe(data=>{
       this.roles = data as [];
-    this.listRoles=this.form.get('listRoles') as FormArray });
+
 
     this.form=new FormGroup({
       email : new FormControl(null,Validators.required),
@@ -37,11 +36,16 @@ export class UserFormComponent implements OnInit {
       // role2:new FormControl(null, Validators.required),
       // role3:new FormControl(null, Validators.required),
       // role4:new FormControl(null, Validators.required),
-      listRoles:new FormArray([new FormControl(null, Validators.required)])
+
 
     })
 
     this.addRoles()
+
+      theCheckbox: new FormControl(null, Validators.required)
+    })
+    this.addRoles();
+
   }
 
   toggleVisibility(e){
@@ -54,11 +58,17 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-  addUser(){
-   
 
+  addRole(r){
+    this.marked=r.target.checked;
+  }
+
+
+  addUser(){
     this.userservice.add(this.form.value).subscribe(response=>
       this.userservice.utilisateurs.push(response.body));
+      this.form.reset;
   }
+  
 
 }

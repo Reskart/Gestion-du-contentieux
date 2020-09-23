@@ -1,1 +1,60 @@
-<p>document works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="img-logo" style="text-align:left;">
+            <a href=""role="button">
+                <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+                height="150px" width="150px"/>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h1 style="text-align: center;padding-top:75px">Gestion des affaires</h1>
+    </div>
+    <div class="col-md-4" style="text-align: right;">
+      <a href="/affaire/accueil"><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+  </div>
+  </div>
+  
+  <div class="row">
+    <div class="container">
+      <form [formGroup]="form">
+        <div class="card">
+          <div class="card-header">Ajout d'un document</div>
+            <div class="card-body">
+                <div class="table">
+                <div class="row">
+                    <div class="col-md-8" style="margin: auto" >
+                        <label for="dateCreation">Date de création</label>
+                        <input type="date" id="dateCreation" class="form-control" formControlName="dateCreation" />
+                        <p *ngIf="form.get('dateCreation').invalid && form.get('dateCreation').touched" style="color:red">La date de création est obligatoire!</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8" style="margin: auto">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" class="form-control" formControlName="nom"/>
+                        <p *ngIf="form.get('nom').invalid && form.get('nom').touched" style="color:red">Le nom est obligatoire!</p>   
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-md-8" style="margin: auto">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description" formControlName="description"/>
+                        <p *ngIf="form.get('description').invalid && form.get('description').touched" style="color:red">La descripton est obligatoire!</p>    
+                    </div>
+                 </div>
+                 
+                <br/>
+                <div class="row">
+                    <div class="col-md-8" style="margin: auto; text-align: center;">
+                        <input type="submit" class="btn btn-success" [disabled]="!form.valid"  value="Ajouter" (click)=addDocument() />
+                     </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
