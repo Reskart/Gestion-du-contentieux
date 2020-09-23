@@ -20,11 +20,6 @@ export class UserListComponent implements OnInit {
   form: FormGroup;
   formValue:any;
   name:any;
-<<<<<<< HEAD
-
-  user:any;
-=======
->>>>>>> 0eb8542014f01943a51bd3f610b90a3069eae25a
   userSS:any[]=[];
   
  
@@ -53,22 +48,10 @@ export class UserListComponent implements OnInit {
   // }
 
   finduserName(){
-<<<<<<< HEAD
-    
-
-    this.userservice.getName(this.form.value['name']).subscribe(data=>{
-      this.userSS=data;    });
-
-      
-      
-
-      // this.userS = JSON.stringify(this.user);
-=======
     this.formValue=this.form.value;
     this.name=this.formValue['name'];
     this.userservice.getName(this.name).subscribe(data=>{
       this.userSS=data;});
->>>>>>> 0eb8542014f01943a51bd3f610b90a3069eae25a
   }
 
 }
