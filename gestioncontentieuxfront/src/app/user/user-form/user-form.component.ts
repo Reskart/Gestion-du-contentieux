@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray, FormBuilder, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormArray, FormBuilder } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RoleService } from 'src/service/role.service';
@@ -12,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser'
 })
 export class UserFormComponent implements OnInit {
 
-  constructor(private userservice: UserService, private roleservice:RoleService,private router:Router) { }
+  constructor(private userservice: UserService, private roleservice:RoleService,private router:Router, private fb:FormBuilder) { }
 
   form:FormGroup;
   roles:any[]=[];
@@ -20,17 +20,15 @@ export class UserFormComponent implements OnInit {
   marked = false;
   theCheckbox = false;
   index:any;
-
-
+  listRoles:FormArray;
 
   ngOnInit(): void {
 
     this.roleservice.findAll().subscribe(data=>{
-      this.roles = data as []; });
-
+      this.roles = data as [];
+    this.listRoles=this.form.get('listRoles') as FormArray });
 
     this.form=new FormGroup({
-
       email : new FormControl(null,Validators.required),
       nomUtilisateur : new FormControl(null, Validators.required),
       prenomUtilisateur: new FormControl(null, Validators.required),
@@ -39,13 +37,11 @@ export class UserFormComponent implements OnInit {
       // role2:new FormControl(null, Validators.required),
       // role3:new FormControl(null, Validators.required),
       // role4:new FormControl(null, Validators.required),
-      theCheckbox: new FormControl(null, Validators.required)
-
+      listRoles:new FormArray([new FormControl(null, Validators.required)])
 
     })
-    this.addRoles();
 
-
+    this.addRoles()
   }
 
   toggleVisibility(e){
@@ -54,16 +50,9 @@ export class UserFormComponent implements OnInit {
 
   addRoles(){
     for(let k=0;k<=this.roles.length;k++){
-      this.form.addControl("role"+k, new FormControl('', Validators.required));
+      this.form.addControl("role"+k, new FormControl(null, Validators.required));
     }
   }
-
-  addRole(r){
-    this.marked=r.target.checked;
-  }
-
-
-  
 
   addUser(){
    
