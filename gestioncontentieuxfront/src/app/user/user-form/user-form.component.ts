@@ -37,7 +37,7 @@ export class UserFormComponent implements OnInit {
       // role2:new FormControl(null, Validators.required),
       // role3:new FormControl(null, Validators.required),
       // role4:new FormControl(null, Validators.required),
-      listRoles:new FormArray([new FormControl(null, Validators.required)])
+      // listRoles:new FormArray([new FormControl(null, Validators.required)])
 
     })
 

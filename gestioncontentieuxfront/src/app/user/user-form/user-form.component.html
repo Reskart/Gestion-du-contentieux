@@ -7,12 +7,15 @@
     <input type="text" placeholder="Prénom" formControlName="prenomUtilisateur"/>
     <input type="text" placeholder="email" formControlName="email"/><br/>
 
-    <div class="form-check" formArrayName="listRoles"  *ngFor="let r of roles, let i=index">
+    <div class="form-check"   *ngFor="let r of roles, let i=index">
         <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" (change)="toggleVisibility($event)"/>
+          <input class="form-check-input" type="checkbox" formControlName="role{{i}}" (change)="toggleVisibility($event)" value="{{roles[i]}}"/>
           {{roles[i].libelle}}
         </label><br/>
     </div><br/>
+    <!-- <select multiple="" class="form-control" id="exampleSelect2">
+      <option *ngFor="let r of roles, let i=index" formControlName="role{{i}}">{{roles[i].libelle}}</option>
+    </select> -->
 
     <!-- <div class="form-check">
       <label class="form-check-label">
