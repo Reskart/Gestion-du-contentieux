@@ -27,7 +27,7 @@ export class UserListComponent implements OnInit {
   name:any;
 
   user:any;
-  userSS:any[]=[]
+  userSS:any[]=[];
   
  
 
@@ -55,16 +55,12 @@ export class UserListComponent implements OnInit {
   // }
 
   finduserName(){
-    this.formValue=this.form.value;
-    this.name=this.formValue['name'];
+    
 
+    this.userservice.getName(this.form.value['name']).subscribe(data=>{
+      this.userSS=data;    });
 
-
-
-    this.userservice.getName(this.name).subscribe(data=>{
-      this.user=data;    });
-
-      this.userSS=this.user;
+      
       
 
       // this.userS = JSON.stringify(this.user);
