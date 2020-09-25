@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { AffaireService } from 'src/service/affaire.service';
+import { DocumentService } from 'src/service/document.service';
 
 @Component({
   selector: 'app-consultation',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultationComponent implements OnInit {
 
-  constructor() { }
+  documentsList: any[] = [];
+  idAffaire : any;
+  
+  constructor(private documentService : DocumentService, private activatedRoute: ActivatedRoute, private affaireService: AffaireService) { }
 
   ngOnInit(): void {
+    this.findDoc();
   }
+
+  
+
+  findDoc() {
+
+    this.activatedRoute.params.subscribe((param: Params) => {
+      this.idAffaire = param['id'];
+
+      this.affaireService.getDoc(this.idAffaire).subscribe(data => {
+        this.documentsList = data as [];
+      });
+
+  });
+}
 
 }

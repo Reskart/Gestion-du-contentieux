@@ -1,1 +1,43 @@
-<p>consultation works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="img-logo" style="text-align:left;">
+            <a href=""role="button">
+                <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+                height="150px" width="150px"/>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h1 style="text-align: center;padding-top:75px">Gestion des affaires</h1>
+    </div>
+    <div class="col-md-4" style="text-align: right;">
+      <a href="/affaire/accueil"><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+  </div>
+  </div>
+
+  <br>
+<div class="row">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Liste des Documents</div>
+      <div class="card-body" *ngIf="documentsList.length===0">Aucun document n'existe pour cette affaire.</div>
+      <div class="card-body" *ngIf="documentsList.length>0">
+        <table class="table">
+          <thead class="thead-light">
+            <th>Date de création</th>
+            <th>Nom</th>
+            <th>Description</th>
+          </thead>
+          <tr *ngFor="let d of documentsList" >
+            <td><p style="width: 75px; overflow: hidden; white-space: nowrap;">{{d.dateCreation}}</p></td>
+            <td>{{d.nom}}</td>
+            <td>{{d.description}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
