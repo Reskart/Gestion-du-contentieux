@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormArray, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RoleService } from 'src/service/role.service';
-import { BrowserModule } from '@angular/platform-browser'
+
 
 @Component({
   selector: 'app-user-form',
@@ -20,6 +20,7 @@ export class UserFormComponent implements OnInit {
   marked = false;
   theCheckbox = false;
   index:any;
+  selectRoles: any[]=[];
 
   ngOnInit(): void {
 
@@ -31,21 +32,9 @@ export class UserFormComponent implements OnInit {
       email : new FormControl(null,Validators.required),
       nomUtilisateur : new FormControl(null, Validators.required),
       prenomUtilisateur: new FormControl(null, Validators.required),
-      // role0:new FormControl(null, Validators.required),
-      // role1:new FormControl(null, Validators.required),
-      // role2:new FormControl(null, Validators.required),
-      // role3:new FormControl(null, Validators.required),
-      // role4:new FormControl(null, Validators.required),
-      // listRoles:new FormArray([new FormControl(null, Validators.required)])
-
     })
-
     this.addRoles()
-
-
     })
-    
-
   }
 
   toggleVisibility(e){
@@ -58,17 +47,23 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-
   addRole(r){
     this.marked=r.target.checked;
   }
 
-
   addUser(){
+    //this.form.value.roles = this.selectRoles;
     this.userservice.add(this.form.value).subscribe(response=>
       this.userservice.utilisateurs.push(response.body));
       this.form.reset;
   }
   
-
+  changeSelection(event){
+    let index = this.selectRoles.indexOf(event.target.value);
+    if(index == -1){
+      this.selectRoles.push(event.target.value);
+    }else{
+      this.selectRoles.splice(index,1);
+    }
+  }
 }

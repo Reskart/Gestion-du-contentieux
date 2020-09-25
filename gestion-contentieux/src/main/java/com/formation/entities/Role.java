@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idRole")
+@JsonIdentityInfo(scope=Role.class, generator=ObjectIdGenerators.PropertyGenerator.class, property="idRole")
 public class Role implements Serializable{
 
 	/**

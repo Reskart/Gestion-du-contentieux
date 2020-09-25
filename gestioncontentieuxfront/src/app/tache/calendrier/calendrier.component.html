@@ -1,3 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+      <div class="img-logo" style="text-align:left;">
+          <a href=""role="button">
+              <img src ="assets/logo_happyskies.png" alt="logo-happyskies" 
+              height="150px" width="150px"/>
+          </a>
+      </div>
+  </div>
+  <div class="col-md-4">
+      <h1 style="text-align: center;padding-top:75px">Calendrier</h1>
+  </div>
+  <div class="col-md-4" style="text-align: right;">
+      <a href="/tache"><button type="button" style="margin-right: 50px; margin-top: 50px;" class="btn btn-primary">Retour</button></a>
+  </div>
+</div>
+<br/>
 <div class="row text-center">
     <div class="col-md-4">
       <div class="btn-group">
@@ -86,54 +103,7 @@
       </button>
     </div>
   </ng-template>
-  
-  <br /><br /><br />
-  
-  <h3>
-    Événements
-    <button class="btn btn-primary float-right" (click)="addEvent()">Ajouter un événement</button>
-    <div class="clearfix"></div>
-  </h3>
-  
-  <div class="table-responsive">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Titre</th>
-          <th>Premièrre couleur</th>
-          <th>Seconde couleur</th>
-          <th>Commence à</th>
-          <th>Fini à</th>
-          <th>Retirer</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <tr *ngFor="let event of events">
-          <td>
-            <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()" />
-          </td>
-          <td>
-            <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()"/>
-          </td>
-          <td>
-            <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()"/>
-          </td>
-          <td>
-            <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()" [altInput]="true"
-              [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set"/>
-          </td>
-          <td>
-            <input class="form-control" type="text"  mwlFlatpickr  [(ngModel)]="event.end"  (ngModelChange)="refresh.next()" [altInput]="true"
-              [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set"/>
-          </td>
-          <td>
-            <button class="btn btn-danger" (click)="deleteEvent(event)">Supprimer </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
   
   <link href="https://unpkg.com/bootstrap-css-only@4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free@5.13.0/css/all.css" rel="stylesheet">

@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idUtilisateur")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})@JsonIdentityInfo(scope=Utilisateur.class, generator=ObjectIdGenerators.PropertyGenerator.class, property="idUtilisateur")
 public class Utilisateur implements Serializable {
 
 	/**

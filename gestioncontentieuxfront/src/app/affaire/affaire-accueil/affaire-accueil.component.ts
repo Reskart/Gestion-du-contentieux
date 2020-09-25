@@ -35,4 +35,8 @@ export class AffaireAccueilComponent implements OnInit {
     this.router.navigate(['/document', idAffaire]);
   }
 
+  findAllDoc(idAffaire){
+    this.router.navigate(['/consultation', idAffaire]);
+  }
+
 }
