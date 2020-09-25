@@ -34,10 +34,12 @@
       <div class="card">
         <div class="card-body">
           <table class="table">
+            <tr><td>id Utilisateur</td><td>email</td><td>Nom</td><td>Prénom</td></tr>
             <tr *ngFor="let u of utilisateurs">
                 <td>{{u.idUtilisateur}}</td>
                 <td>{{u.email}}</td>
                 <td>{{u.nomUtilisateur}}</td>
+                <td>{{u.prenomUtilisateur}}</td>
             </tr>
           </table>
         </div>
