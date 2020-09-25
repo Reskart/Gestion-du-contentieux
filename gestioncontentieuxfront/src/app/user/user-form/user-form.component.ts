@@ -32,8 +32,9 @@ export class UserFormComponent implements OnInit {
       email : new FormControl(null,Validators.required),
       nomUtilisateur : new FormControl(null, Validators.required),
       prenomUtilisateur: new FormControl(null, Validators.required),
+      // roles:this.fb.array([])
     })
-    this.addRoles()
+     this.addRoles()
     })
   }
 
