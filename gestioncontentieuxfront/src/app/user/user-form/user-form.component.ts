@@ -54,7 +54,7 @@ export class UserFormComponent implements OnInit {
 
   addRoles(){
     for(let k=0;k<=this.roles.length;k++){
-      this.form.addControl("role"+k, new FormControl(null, Validators.required));
+      this.form.addControl("roles", new FormControl(null, Validators.required));
     }
   }
 
