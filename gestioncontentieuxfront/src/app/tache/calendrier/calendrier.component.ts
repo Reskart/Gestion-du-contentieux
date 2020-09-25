@@ -15,7 +15,7 @@ import {
   endOfMonth,
   isSameDay,
   isSameMonth,
-  addHours, } from 'date-fns';
+  addHours, parseISO } from 'date-fns';
 
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -74,12 +74,18 @@ export class CalendrierComponent{
   events: CalendarEvent[] = [
   ];
 
+  tachesList: any[] = [];
 
-
+  evenement: CalendarEvent;
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, private Router: Router) { }
+  ngOnInit(): void {
+    this.findAll();
+    
+  }
+
+  constructor(private modal: NgbModal, private Router: Router, private tacheService: TacheService) { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -146,5 +152,37 @@ export class CalendrierComponent{
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
+
+  findAll() {
+    this.tacheService.findall().subscribe(data => {
+      this.tachesList = data as [];
+
+      this.tachesList.forEach(tache => {
+
+        this.events = [
+          ...this.events,
+          {
+            title: tache.titre,
+            start: parseISO(tache.dateCreation),
+            end: parseISO(tache.dateCreation),
+            color: colors.red,
+            draggable: true,
+            resizable: {
+              beforeStart: true,
+              afterEnd: true,
+            },
+          },
+        ];
+
+        console.log(this.events);
+  
+        
+      });
+    })
+  }
+
+ 
+
+
 }
 

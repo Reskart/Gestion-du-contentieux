@@ -55,7 +55,7 @@
         <div class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month" >
           Mois
         </div>
-        <div class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week" >
+        <div class="btn btn-primary" [class.active]="view === CalendarView.Week" >
           Semaine
         </div>
         <div class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day" >
@@ -65,6 +65,7 @@
     </div>
 
   </div>
+  <br/>
 
   <br />
 
@@ -103,6 +104,53 @@
       </button>
     </div>
   </ng-template>
+
+  <br/>
+  <h3>
+    Tâches
+    <button class="btn btn-primary float-right" [disabled]="tachesList.length>0" (click)="findAll()">Afficher les tâches</button>
+    <div class="clearfix"></div>
+  </h3>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Première couleur</th>
+          <th>Seconde couleur</th>
+          <th>Commence à</th>
+          <th>Fini à</th>
+          <th>Retirer</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()" />
+          </td>
+          <td>
+            <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()"/>
+          </td>
+          <td>
+            <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()"/>
+          </td>
+          <td>
+            <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()" [altInput]="true"
+              [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set"/>
+          </td>
+          <td>
+            <input class="form-control" type="text"  mwlFlatpickr  [(ngModel)]="event.end"  (ngModelChange)="refresh.next()" [altInput]="true"
+              [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set"/>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteEvent(event)">Supprimer </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   
   <link href="https://unpkg.com/bootstrap-css-only@4.4.1/css/bootstrap.min.css" rel="stylesheet">
