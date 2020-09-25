@@ -17,6 +17,7 @@ import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
 import { DocumentComponent} from './document/document.component';
+import { ConsultationComponent } from './document/consultation/consultation.component';
 
 const routes: Routes = [
   {path : '', component:AccueilComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
     {path: 'edit/:id', component: AffaireAjoutComponent}
   ]},
   {path: 'document/:id', component: DocumentComponent},
+  {path: 'consultation/:id', component: ConsultationComponent},
 
   
   {path:'TDB', component:TableaubordComponent},

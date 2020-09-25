@@ -34,4 +34,8 @@ export class AffaireService {
     return this.http.get<any>(this.URL+'/affaire/'+id);
   }
 
+  getDoc(id){
+    return this.http.get<any>(this.URL+'/document/'+id);
+  }
+
 }

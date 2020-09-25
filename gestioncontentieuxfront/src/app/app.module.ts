@@ -33,6 +33,7 @@ import { AffaireAjoutComponent } from './affaire/affaire-ajout/affaire-ajout.com
 import { EncoursComponent } from './tableaubord/encours/encours.component';
 import { AvenirComponent } from './tableaubord/avenir/avenir.component';
 import { ArchiveComponent } from './tableaubord/archive/archive.component';
+import { ConsultationComponent } from './document/consultation/consultation.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ArchiveComponent } from './tableaubord/archive/archive.component';
     AffaireAjoutComponent,
     EncoursComponent,
     AvenirComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    ConsultationComponent
   
   ],
   imports: [

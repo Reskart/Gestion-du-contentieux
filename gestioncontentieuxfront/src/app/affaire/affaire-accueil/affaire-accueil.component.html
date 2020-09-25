@@ -40,6 +40,7 @@
             <td>{{a.statut}}</td>
             <td><input type="submit" value="Modifier" class="btn btn-warning" (click)="edit(a.idAffaire)" /></td>
             <td><input type="submit" value="Ajouter un document" class="btn btn-warning" (click)="ajoutDoc(a.idAffaire)" /></td>
+            <td><input type="submit" value="Consulter les documents" class="btn btn-warning" (click)="findAllDoc(a.idAffaire)"/></td>
 
           </tr>
         </table>

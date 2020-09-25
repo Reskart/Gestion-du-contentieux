@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.formation.entities.Affaire;
+import com.formation.entities.Document;
 import com.formation.service.IAffaireService;
 
 @RestController
@@ -56,6 +57,11 @@ public class AffaireWebservice {
 	public List<Affaire> getByStat(@PathVariable int statut) {
 		return service.findByStatut(statut);
 		
+	}
+	
+	@RequestMapping(value="document/{id}", method=RequestMethod.GET)
+	public List<Document> getDoc(@PathVariable Long id) {
+		return service.findDoc(id);
 	}
 
 }

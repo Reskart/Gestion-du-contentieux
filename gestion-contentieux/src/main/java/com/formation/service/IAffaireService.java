@@ -3,6 +3,7 @@ package com.formation.service;
 import java.util.List;
 
 import com.formation.entities.Affaire;
+import com.formation.entities.Document;
 
 public interface IAffaireService {
 	
@@ -12,5 +13,6 @@ public interface IAffaireService {
 	public void delete(Long id);
 	public Affaire findByRef(String ref);
 	public List<Affaire> findByStatut(int statut);
+	public List<Document> findDoc(Long id);
 
 }
