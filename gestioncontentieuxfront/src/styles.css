@@ -80,7 +80,7 @@
    line-height: 1.5;
    color: #ebebeb;
    text-align: left;
-   background: linear-gradient(#f06d06, #f0c506);
+   background: linear-gradient(22.5deg, #f06d06, #f0c506);
  }
  
  [tabindex="-1"]:focus:not(:focus-visible) {
